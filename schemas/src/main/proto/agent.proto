@@ -178,75 +178,120 @@ message ConversationStateStructure {
 // --- Placeholder Messages ---
 
 message ConversationTokenDetails {
-    int64 used_tokens = 1;
-    int64 max_tokens = 2;
+  int64 used_tokens = 1;
+  int64 max_tokens = 2;
 }
 message ModelDetails {
   string model_name = 1;
 }
-message McpTools {}
-message ShellResult {}
-message WriteResult {}
-message DeleteResult {}
-message GrepResult {}
-message ReadResult {}
-message LsResult {}
-message DiagnosticsResult {}
-message McpResult {}
-message ShellStream {}
-message BackgroundShellSpawnResult {}
-message ExecClientStreamClose {}
-message ExecClientThrow {}
-message GetBlobResult {}
-message SetBlobResult {}
+message McpTools {
+}
+message ShellResult {
+}
+message WriteResult {
+}
+message DeleteResult {
+}
+message GrepResult {
+}
+message ReadResult {
+}
+message LsResult {
+}
+message DiagnosticsResult {
+}
+message McpResult {
+}
+message ShellStream {
+}
+message BackgroundShellSpawnResult {
+}
+message ExecClientStreamClose {
+}
+message ExecClientThrow {
+}
+message GetBlobResult {
+}
+message SetBlobResult {
+}
 message UserMessageAction {
   UserMessage user_message = 1;
 }
-message ResumeAction {}
-message CancelAction {}
-message SummarizeAction {}
-message ShellCommandAction {}
-message StartPlanAction {}
-message ExecutePlanAction {}
-message TextDeltaUpdate {
-    string text = 1;
+message ResumeAction {
 }
-message ToolCallStartedUpdate {}
-message ToolCallCompletedUpdate {}
-message ThinkingDeltaUpdate {}
+message CancelAction {
+}
+message SummarizeAction {
+}
+message ShellCommandAction {
+}
+message StartPlanAction {
+}
+message ExecutePlanAction {
+}
+message TextDeltaUpdate {
+  string text = 1;
+}
+message ToolCallStartedUpdate {
+}
+message ToolCallCompletedUpdate {
+}
+message ThinkingDeltaUpdate {
+}
 message ThinkingCompletedUpdate {
-    int32 thinking_duration_ms = 1;
+  int32 thinking_duration_ms = 1;
 }
 message UserMessageAppendedUpdate {
-    UserMessage user_message = 1;
+  UserMessage user_message = 1;
 }
 message UserMessage {
-    string text = 1;
+  string text = 1;
 }
-message PartialToolCallUpdate {}
+message PartialToolCallUpdate {
+}
 message TokenDeltaUpdate {
-    int32 tokens = 1;
+  int32 tokens = 1;
 }
-message SummaryUpdate {}
-message SummaryStartedUpdate {}
-message SummaryCompletedUpdate {}
-message ShellOutputDeltaUpdate {}
-message HeartbeatUpdate {}
-message TurnEndedUpdate {}
-message ToolCallDeltaUpdate {}
-message StepStartedUpdate {}
-message ShellArgs {}
-message WriteArgs {}
-message DeleteArgs {}
-message GrepArgs {}
-message ReadArgs {}
-message LsArgs {}
-message DiagnosticsArgs {}
-message RequestContextArgs {}
-message McpArgs {}
-message BackgroundShellSpawnArgs {}
-message ExecServerAbort {}
-message GetBlobArgs {}
+message SummaryUpdate {
+}
+message SummaryStartedUpdate {
+}
+message SummaryCompletedUpdate {
+}
+message ShellOutputDeltaUpdate {
+}
+message HeartbeatUpdate {
+}
+message TurnEndedUpdate {
+}
+message ToolCallDeltaUpdate {
+}
+message StepStartedUpdate {
+}
+message ShellArgs {
+}
+message WriteArgs {
+}
+message DeleteArgs {
+}
+message GrepArgs {
+}
+message ReadArgs {
+}
+message LsArgs {
+}
+message DiagnosticsArgs {
+}
+message RequestContextArgs {
+}
+message McpArgs {
+}
+message BackgroundShellSpawnArgs {
+}
+message ExecServerAbort {
+}
+message GetBlobArgs {
+}
 message SetBlobArgs {
   bytes blob_id = 1;
   bytes blob_data = 2;

@@ -1,6 +1,7 @@
 # Cursor SDK for Java
 
 ```bash
+./scripts/lint-protobuf.sh
 ./scripts/generate-protobuf-docs.sh
 jwebserver -p 8000 -d "$(pwd)/docs"
 
@@ -13,3 +14,4 @@ jwebserver -p 8000 -d "$(pwd)/docs"
 - https://www.jwt.io/
 - https://ascopes.github.io/protobuf-maven-plugin/
 - https://github.com/pseudomuto/protoc-gen-doc
+- https://github.com/yoheimuta/protolint
