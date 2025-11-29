@@ -7,3 +7,5 @@ target/
 *.log
 .classpath
 .env
+*.pb
+schemas/src/main/proto/sabledocs.toml

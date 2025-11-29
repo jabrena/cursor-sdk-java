@@ -34,6 +34,25 @@ fi
 # Change to project root directory
 cd "$PROJECT_ROOT"
 
+# Config file paths
+CONFIG_FILE="$SCRIPT_DIR/.protolint.yaml"
+PROJECT_CONFIG="$PROJECT_ROOT/.protolint.yaml"
+
+# Check if config file exists
+if [ ! -f "$CONFIG_FILE" ]; then
+    print_warn ".protolint.yaml not found, using default configuration"
+else
+    # Copy config file to project root for protolint to find it
+    cp "$CONFIG_FILE" "$PROJECT_CONFIG"
+    # Clean up function to remove config file after linting
+    cleanup() {
+        if [ -f "$PROJECT_CONFIG" ]; then
+            rm -f "$PROJECT_CONFIG"
+        fi
+    }
+    trap cleanup EXIT
+fi
+
 # Lint Protobuf contract
 print_info "Linting Protobuf contract..."
 docker run --rm \
