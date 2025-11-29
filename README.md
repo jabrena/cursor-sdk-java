@@ -1,1 +1,25 @@
-# cursor-sdk-java
+# Cursor SDK for Java
+
+```bash
+./mvnw clean install -pl examples -am && mvn exec:java -pl examples
+```
+
+## Current Status:
+
+```bash
+DEBUG: Connecting to api2.cursor.sh:443
+DEBUG: Sending RunRequest with prompt: What's in this codebase?
+DEBUG: Sending RunRequest bytes: 0a550a00121e0a1c0a1a0a1857686174277320696e207468697320636f6465626173653f1a090a0764656661756c7422002a2461326138303037652d666666612d346565372d626237312d316139383835366133373163
+DEBUG: Waiting for response (timeout: 60 seconds)...
+DEBUG: Received message from server
+DEBUG: Received ExecServerMessage, sending request context...
+DEBUG: Sending ExecClientMessage bytes: 12a202529f020a9c020a99020a322f55736572732f6a616272656e612f4964656150726f6a656374732f637572736f722d73646b2d6a6176612f73616d706c65124d0a0d4d6163204f5320582031342e3512322f55736572732f6a616272656e612f4964656150726f6a656374732f637572736f722d73646b2d6a6176612f73616d706c651a082f62696e2f7a73681a49284e6f206e6f746573206469726563746f727920796574202d2077696c6c2062652063726561746564207768656e20796f7520777269746520796f7572206669727374206e6f7465292a490a322f55736572732f6a616272656e612f4964656150726f6a656374732f637572736f722d73646b2d6a6176612f73616d706c651a110a0f48656c6c6f576f726c642e6a6176612001
+DEBUG: Sending ExecClientControlMessage bytes: 2a020a00
+DEBUG: Timeout waiting for agent response
+DEBUG: Error in response observer: UNAVAILABLE: Channel shutdownNow invoked
+io.grpc.StatusRuntimeException: UNAVAILABLE: Channel shutdownNow invoked
+```
+
+## References
+
+- https://www.jwt.io/
