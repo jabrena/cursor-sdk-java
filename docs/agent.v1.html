@@ -1,0 +1,5245 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cursor SDK Protobuf schema</title>
+    <link rel="stylesheet" href="static/mystyles.css" />
+    <script src="static/fontawesome.js"></script>
+    <script src="static/lunr.js"></script>
+    <script src="static/theme.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="level pt-6 mb-5 pb-2 bottom-border">
+        <div class="level-left">
+          <p class="level-item has-text-centered is-size-3 has-text-weight-medium">
+            <a class="link is-info" href="index.html">
+              Cursor SDK Protobuf schema
+            </a>
+          </p>
+        </div>
+
+        <div class="level-right">
+          
+          <form action="search.html" class="mr-2 has-text-centered">
+            <input type="text" name="query" class="input mr-3 navbar-search-query-input" placeholder="Search">
+            <input type="submit" class="button is-primary mr-5" value="Search" />
+          </form>
+          
+
+          <p class="level-item has-text-centered is-size-5">
+            <a href="" class="link is-info mr-5" target="_blank">
+              
+              <span>Source</span>
+            </a>
+
+            <button class="theme-toggle" id="theme-toggle" title="Toggles light & dark" aria-label="auto" aria-live="polite" type="button">
+              <svg class="sun-and-moon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+                <mask class="moon" id="moon-mask">
+                  <rect x="0" y="0" width="100%" height="100%" fill="white" />
+                  <circle cx="24" cy="10" r="6" fill="black" />
+                </mask>
+                <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="currentColor" />
+                <g class="sun-beams" stroke="currentColor">
+                  <line x1="12" y1="1" x2="12" y2="3" />
+                  <line x1="12" y1="21" x2="12" y2="23" />
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                  <line x1="1" y1="12" x2="3" y2="12" />
+                  <line x1="21" y1="12" x2="23" y2="12" />
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                </g>
+              </svg>
+            </button>
+          </p>
+        </div>
+      </nav>
+    </div>
+
+    <div id="main-content" class="container mb-6">
+  <p class="mb-2">
+    <a style="font-size: 0.9em" href="index.html">← Back to packages</a>
+  </p>
+  <h3 class="title is-3">
+    
+    Package <code>agent.v1</code>
+    
+  </h3>
+
+  <div class="block">
+    
+    <p>
+      <a href="#service-agent.v1.AgentService">
+        <span class="tag" style="min-width: 6em">Service</span>
+        <code>AgentService</code> 
+      </a>
+    </p>
+    
+
+    
+      
+      <p>
+        <a href="#message-agent.v1.AgentClientMessage">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>AgentClientMessage</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.AgentRunRequest">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>AgentRunRequest</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.AgentServerMessage">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>AgentServerMessage</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.BackgroundShellSpawnArgs">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>BackgroundShellSpawnArgs</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.BackgroundShellSpawnResult">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>BackgroundShellSpawnResult</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.CancelAction">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>CancelAction</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.ContextHeader">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ContextHeader</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.ConversationAction">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ConversationAction</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.ConversationStateStructure">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ConversationStateStructure</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.ConversationTokenDetails">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ConversationTokenDetails</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.DeleteArgs">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>DeleteArgs</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.DeleteResult">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>DeleteResult</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.DiagnosticsArgs">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>DiagnosticsArgs</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.DiagnosticsResult">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>DiagnosticsResult</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.ExecClientControlMessage">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ExecClientControlMessage</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.ExecClientMessage">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ExecClientMessage</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.ExecClientStreamClose">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ExecClientStreamClose</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.ExecClientThrow">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ExecClientThrow</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.ExecServerAbort">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ExecServerAbort</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.ExecServerControlMessage">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ExecServerControlMessage</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.ExecServerMessage">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ExecServerMessage</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.ExecutePlanAction">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ExecutePlanAction</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.FileEntry">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>FileEntry</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.GetBlobArgs">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>GetBlobArgs</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.GetBlobResult">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>GetBlobResult</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.GitRepo">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>GitRepo</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.GrepArgs">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>GrepArgs</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.GrepResult">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>GrepResult</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.HeartbeatUpdate">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>HeartbeatUpdate</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.InteractionUpdate">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>InteractionUpdate</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.KvClientMessage">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>KvClientMessage</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.KvServerMessage">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>KvServerMessage</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.LsArgs">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>LsArgs</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.LsResult">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>LsResult</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.McpArgs">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>McpArgs</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.McpResult">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>McpResult</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.McpTools">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>McpTools</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.ModelDetails">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ModelDetails</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.PartialToolCallUpdate">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>PartialToolCallUpdate</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.ProjectLayout">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ProjectLayout</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.ReadArgs">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ReadArgs</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.ReadResult">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ReadResult</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.RequestContext">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>RequestContext</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.RequestContextArgs">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>RequestContextArgs</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.RequestContextEnv">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>RequestContextEnv</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.RequestContextResult">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>RequestContextResult</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.RequestContextSuccess">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>RequestContextSuccess</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.ResumeAction">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ResumeAction</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.SetBlobArgs">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>SetBlobArgs</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.SetBlobResult">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>SetBlobResult</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.ShellArgs">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ShellArgs</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.ShellCommandAction">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ShellCommandAction</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.ShellOutputDeltaUpdate">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ShellOutputDeltaUpdate</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.ShellResult">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ShellResult</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.ShellStream">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ShellStream</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.StartPlanAction">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>StartPlanAction</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.StepStartedUpdate">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>StepStartedUpdate</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.SummarizeAction">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>SummarizeAction</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.SummaryCompletedUpdate">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>SummaryCompletedUpdate</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.SummaryStartedUpdate">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>SummaryStartedUpdate</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.SummaryUpdate">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>SummaryUpdate</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.TextDeltaUpdate">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>TextDeltaUpdate</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.ThinkingCompletedUpdate">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ThinkingCompletedUpdate</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.ThinkingDeltaUpdate">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ThinkingDeltaUpdate</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.TokenDeltaUpdate">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>TokenDeltaUpdate</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.ToolCallCompletedUpdate">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ToolCallCompletedUpdate</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.ToolCallDeltaUpdate">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ToolCallDeltaUpdate</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.ToolCallStartedUpdate">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>ToolCallStartedUpdate</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.TurnEndedUpdate">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>TurnEndedUpdate</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.UserMessage">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>UserMessage</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.UserMessageAction">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>UserMessageAction</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.UserMessageAppendedUpdate">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>UserMessageAppendedUpdate</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.WriteArgs">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>WriteArgs</code> 
+        </a>
+      </p>
+      
+    
+      
+      <p>
+        <a href="#message-agent.v1.WriteResult">
+          <span class="tag" style="min-width: 6em">Message</span>
+          <code>WriteResult</code> 
+        </a>
+      </p>
+      
+    
+
+    
+  </div>
+
+  <div class="block">
+      
+  </div>
+
+  
+
+  <div class="block">
+    <h3 class="title is-3">
+      Services
+    </h3>
+
+    
+    <div>
+      
+
+<h4 class="title is-4 type-heading" id="service-agent.v1.AgentService">
+  <a href="#service-agent.v1.AgentService" title="agent.v1.AgentService">service AgentService</a>
+  
+</h4>
+
+<div class="block content">
+  <p></p>
+</div>
+
+
+<div class="box">
+  <div class="block">
+    <h5 class="title is-5" id="service-agent.v1.AgentService-Run">
+      <a href="#service-agent.v1.AgentService-Run">
+        rpc <code>Run</code>
+      </a>
+    </h5>
+    Request: <code><a href="agent.v1.html#message-agent.v1.AgentClientMessage"><span title="agent.v1.AgentClientMessage">agent.v1.AgentClientMessage</span>
+    </a></code><br>
+    Response: <code><a href="agent.v1.html#message-agent.v1.AgentServerMessage"><span title="agent.v1.AgentServerMessage">agent.v1.AgentServerMessage</span>
+    </a></code><br>
+  </div>
+
+  
+</div>
+ 
+    </div>
+    
+  </div>
+
+  
+
+  
+
+    <h3 class="title is-3">
+      Messages
+    </h3>
+
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.AgentClientMessage">
+  <span>
+    <a href="#message-agent.v1.AgentClientMessage" title="agent.v1.AgentClientMessage">message AgentClientMessage</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        run_request
+      </td>
+      <td>
+        <code title="agent.v1.AgentRunRequest">
+          
+          <a href="agent.v1.html#message-agent.v1.AgentRunRequest"><span title="agent.v1.AgentRunRequest">agent.v1.AgentRunRequest</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        exec_client_message
+      </td>
+      <td>
+        <code title="agent.v1.ExecClientMessage">
+          
+          <a href="agent.v1.html#message-agent.v1.ExecClientMessage"><span title="agent.v1.ExecClientMessage">agent.v1.ExecClientMessage</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        kv_client_message
+      </td>
+      <td>
+        <code title="agent.v1.KvClientMessage">
+          
+          <a href="agent.v1.html#message-agent.v1.KvClientMessage"><span title="agent.v1.KvClientMessage">agent.v1.KvClientMessage</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        conversation_action
+      </td>
+      <td>
+        <code title="agent.v1.ConversationAction">
+          
+          <a href="agent.v1.html#message-agent.v1.ConversationAction"><span title="agent.v1.ConversationAction">agent.v1.ConversationAction</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        exec_client_control_message
+      </td>
+      <td>
+        <code title="agent.v1.ExecClientControlMessage">
+          
+          <a href="agent.v1.html#message-agent.v1.ExecClientControlMessage"><span title="agent.v1.ExecClientControlMessage">agent.v1.ExecClientControlMessage</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.AgentRunRequest">
+  <span>
+    <a href="#message-agent.v1.AgentRunRequest" title="agent.v1.AgentRunRequest">message AgentRunRequest</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        conversation_state
+      </td>
+      <td>
+        <code title="agent.v1.ConversationStateStructure">
+          
+          <a href="agent.v1.html#message-agent.v1.ConversationStateStructure"><span title="agent.v1.ConversationStateStructure">agent.v1.ConversationStateStructure</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        action
+      </td>
+      <td>
+        <code title="agent.v1.ConversationAction">
+          
+          <a href="agent.v1.html#message-agent.v1.ConversationAction"><span title="agent.v1.ConversationAction">agent.v1.ConversationAction</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        model_details
+      </td>
+      <td>
+        <code title="agent.v1.ModelDetails">
+          
+          <a href="agent.v1.html#message-agent.v1.ModelDetails"><span title="agent.v1.ModelDetails">agent.v1.ModelDetails</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        mcp_tools
+      </td>
+      <td>
+        <code title="agent.v1.McpTools">
+          
+          <a href="agent.v1.html#message-agent.v1.McpTools"><span title="agent.v1.McpTools">agent.v1.McpTools</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        conversation_id
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.AgentServerMessage">
+  <span>
+    <a href="#message-agent.v1.AgentServerMessage" title="agent.v1.AgentServerMessage">message AgentServerMessage</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        interaction_update
+      </td>
+      <td>
+        <code title="agent.v1.InteractionUpdate">
+          
+          <a href="agent.v1.html#message-agent.v1.InteractionUpdate"><span title="agent.v1.InteractionUpdate">agent.v1.InteractionUpdate</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        exec_server_message
+      </td>
+      <td>
+        <code title="agent.v1.ExecServerMessage">
+          
+          <a href="agent.v1.html#message-agent.v1.ExecServerMessage"><span title="agent.v1.ExecServerMessage">agent.v1.ExecServerMessage</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        conversation_checkpoint_update
+      </td>
+      <td>
+        <code title="agent.v1.ConversationStateStructure">
+          
+          <a href="agent.v1.html#message-agent.v1.ConversationStateStructure"><span title="agent.v1.ConversationStateStructure">agent.v1.ConversationStateStructure</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        kv_server_message
+      </td>
+      <td>
+        <code title="agent.v1.KvServerMessage">
+          
+          <a href="agent.v1.html#message-agent.v1.KvServerMessage"><span title="agent.v1.KvServerMessage">agent.v1.KvServerMessage</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        exec_server_control_message
+      </td>
+      <td>
+        <code title="agent.v1.ExecServerControlMessage">
+          
+          <a href="agent.v1.html#message-agent.v1.ExecServerControlMessage"><span title="agent.v1.ExecServerControlMessage">agent.v1.ExecServerControlMessage</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.BackgroundShellSpawnArgs">
+  <span>
+    <a href="#message-agent.v1.BackgroundShellSpawnArgs" title="agent.v1.BackgroundShellSpawnArgs">message BackgroundShellSpawnArgs</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.BackgroundShellSpawnResult">
+  <span>
+    <a href="#message-agent.v1.BackgroundShellSpawnResult" title="agent.v1.BackgroundShellSpawnResult">message BackgroundShellSpawnResult</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.CancelAction">
+  <span>
+    <a href="#message-agent.v1.CancelAction" title="agent.v1.CancelAction">message CancelAction</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.ContextHeader">
+  <span>
+    <a href="#message-agent.v1.ContextHeader" title="agent.v1.ContextHeader">message ContextHeader</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        id
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        field_2
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        field_3
+      </td>
+      <td>
+        <code title="int32">
+          
+          <span>int32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.ConversationAction">
+  <span>
+    <a href="#message-agent.v1.ConversationAction" title="agent.v1.ConversationAction">message ConversationAction</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        user_message_action
+      </td>
+      <td>
+        <code title="agent.v1.UserMessageAction">
+          
+          <a href="agent.v1.html#message-agent.v1.UserMessageAction"><span title="agent.v1.UserMessageAction">agent.v1.UserMessageAction</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        resume_action
+      </td>
+      <td>
+        <code title="agent.v1.ResumeAction">
+          
+          <a href="agent.v1.html#message-agent.v1.ResumeAction"><span title="agent.v1.ResumeAction">agent.v1.ResumeAction</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        cancel_action
+      </td>
+      <td>
+        <code title="agent.v1.CancelAction">
+          
+          <a href="agent.v1.html#message-agent.v1.CancelAction"><span title="agent.v1.CancelAction">agent.v1.CancelAction</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        summarize_action
+      </td>
+      <td>
+        <code title="agent.v1.SummarizeAction">
+          
+          <a href="agent.v1.html#message-agent.v1.SummarizeAction"><span title="agent.v1.SummarizeAction">agent.v1.SummarizeAction</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        shell_command_action
+      </td>
+      <td>
+        <code title="agent.v1.ShellCommandAction">
+          
+          <a href="agent.v1.html#message-agent.v1.ShellCommandAction"><span title="agent.v1.ShellCommandAction">agent.v1.ShellCommandAction</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        start_plan_action
+      </td>
+      <td>
+        <code title="agent.v1.StartPlanAction">
+          
+          <a href="agent.v1.html#message-agent.v1.StartPlanAction"><span title="agent.v1.StartPlanAction">agent.v1.StartPlanAction</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>7</td>
+      <td>
+        execute_plan_action
+      </td>
+      <td>
+        <code title="agent.v1.ExecutePlanAction">
+          
+          <a href="agent.v1.html#message-agent.v1.ExecutePlanAction"><span title="agent.v1.ExecutePlanAction">agent.v1.ExecutePlanAction</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.ConversationStateStructure">
+  <span>
+    <a href="#message-agent.v1.ConversationStateStructure" title="agent.v1.ConversationStateStructure">message ConversationStateStructure</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        root_prompt_messages_json
+      </td>
+      <td>
+        <code title="string">
+          
+            repeated
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        turns_old
+      </td>
+      <td>
+        <code title="string">
+          
+            repeated
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        todos
+      </td>
+      <td>
+        <code title="string">
+          
+            repeated
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        pending_tool_calls
+      </td>
+      <td>
+        <code title="string">
+          
+            repeated
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        token_details
+      </td>
+      <td>
+        <code title="agent.v1.ConversationTokenDetails">
+          
+          <a href="agent.v1.html#message-agent.v1.ConversationTokenDetails"><span title="agent.v1.ConversationTokenDetails">agent.v1.ConversationTokenDetails</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        summary
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>7</td>
+      <td>
+        plan
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>8</td>
+      <td>
+        turns
+      </td>
+      <td>
+        <code title="string">
+          
+            repeated
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.ConversationTokenDetails">
+  <span>
+    <a href="#message-agent.v1.ConversationTokenDetails" title="agent.v1.ConversationTokenDetails">message ConversationTokenDetails</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        used_tokens
+      </td>
+      <td>
+        <code title="int64">
+          
+          <span>int64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        max_tokens
+      </td>
+      <td>
+        <code title="int64">
+          
+          <span>int64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.DeleteArgs">
+  <span>
+    <a href="#message-agent.v1.DeleteArgs" title="agent.v1.DeleteArgs">message DeleteArgs</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.DeleteResult">
+  <span>
+    <a href="#message-agent.v1.DeleteResult" title="agent.v1.DeleteResult">message DeleteResult</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.DiagnosticsArgs">
+  <span>
+    <a href="#message-agent.v1.DiagnosticsArgs" title="agent.v1.DiagnosticsArgs">message DiagnosticsArgs</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.DiagnosticsResult">
+  <span>
+    <a href="#message-agent.v1.DiagnosticsResult" title="agent.v1.DiagnosticsResult">message DiagnosticsResult</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.ExecClientControlMessage">
+  <span>
+    <a href="#message-agent.v1.ExecClientControlMessage" title="agent.v1.ExecClientControlMessage">message ExecClientControlMessage</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        stream_close
+      </td>
+      <td>
+        <code title="agent.v1.ExecClientStreamClose">
+          
+          <a href="agent.v1.html#message-agent.v1.ExecClientStreamClose"><span title="agent.v1.ExecClientStreamClose">agent.v1.ExecClientStreamClose</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        throw
+      </td>
+      <td>
+        <code title="agent.v1.ExecClientThrow">
+          
+          <a href="agent.v1.html#message-agent.v1.ExecClientThrow"><span title="agent.v1.ExecClientThrow">agent.v1.ExecClientThrow</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.ExecClientMessage">
+  <span>
+    <a href="#message-agent.v1.ExecClientMessage" title="agent.v1.ExecClientMessage">message ExecClientMessage</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        id
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        shell_result
+      </td>
+      <td>
+        <code title="agent.v1.ShellResult">
+          
+          <a href="agent.v1.html#message-agent.v1.ShellResult"><span title="agent.v1.ShellResult">agent.v1.ShellResult</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        write_result_bool
+      </td>
+      <td>
+        <code title="bool">
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        delete_result
+      </td>
+      <td>
+        <code title="agent.v1.DeleteResult">
+          
+          <a href="agent.v1.html#message-agent.v1.DeleteResult"><span title="agent.v1.DeleteResult">agent.v1.DeleteResult</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        grep_result
+      </td>
+      <td>
+        <code title="agent.v1.GrepResult">
+          
+          <a href="agent.v1.html#message-agent.v1.GrepResult"><span title="agent.v1.GrepResult">agent.v1.GrepResult</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>7</td>
+      <td>
+        read_result
+      </td>
+      <td>
+        <code title="agent.v1.ReadResult">
+          
+          <a href="agent.v1.html#message-agent.v1.ReadResult"><span title="agent.v1.ReadResult">agent.v1.ReadResult</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>8</td>
+      <td>
+        ls_result
+      </td>
+      <td>
+        <code title="agent.v1.LsResult">
+          
+          <a href="agent.v1.html#message-agent.v1.LsResult"><span title="agent.v1.LsResult">agent.v1.LsResult</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>9</td>
+      <td>
+        diagnostics_result
+      </td>
+      <td>
+        <code title="agent.v1.DiagnosticsResult">
+          
+          <a href="agent.v1.html#message-agent.v1.DiagnosticsResult"><span title="agent.v1.DiagnosticsResult">agent.v1.DiagnosticsResult</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>10</td>
+      <td>
+        request_context_result
+      </td>
+      <td>
+        <code title="agent.v1.RequestContextResult">
+          
+          <a href="agent.v1.html#message-agent.v1.RequestContextResult"><span title="agent.v1.RequestContextResult">agent.v1.RequestContextResult</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>11</td>
+      <td>
+        mcp_result
+      </td>
+      <td>
+        <code title="agent.v1.McpResult">
+          
+          <a href="agent.v1.html#message-agent.v1.McpResult"><span title="agent.v1.McpResult">agent.v1.McpResult</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>14</td>
+      <td>
+        shell_stream
+      </td>
+      <td>
+        <code title="agent.v1.ShellStream">
+          
+          <a href="agent.v1.html#message-agent.v1.ShellStream"><span title="agent.v1.ShellStream">agent.v1.ShellStream</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>15</td>
+      <td>
+        exec_id
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>16</td>
+      <td>
+        background_shell_spawn_result
+      </td>
+      <td>
+        <code title="agent.v1.BackgroundShellSpawnResult">
+          
+          <a href="agent.v1.html#message-agent.v1.BackgroundShellSpawnResult"><span title="agent.v1.BackgroundShellSpawnResult">agent.v1.BackgroundShellSpawnResult</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>19</td>
+      <td>
+        context_header
+      </td>
+      <td>
+        <code title="agent.v1.ContextHeader">
+          
+          <a href="agent.v1.html#message-agent.v1.ContextHeader"><span title="agent.v1.ContextHeader">agent.v1.ContextHeader</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.ExecClientStreamClose">
+  <span>
+    <a href="#message-agent.v1.ExecClientStreamClose" title="agent.v1.ExecClientStreamClose">message ExecClientStreamClose</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.ExecClientThrow">
+  <span>
+    <a href="#message-agent.v1.ExecClientThrow" title="agent.v1.ExecClientThrow">message ExecClientThrow</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.ExecServerAbort">
+  <span>
+    <a href="#message-agent.v1.ExecServerAbort" title="agent.v1.ExecServerAbort">message ExecServerAbort</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.ExecServerControlMessage">
+  <span>
+    <a href="#message-agent.v1.ExecServerControlMessage" title="agent.v1.ExecServerControlMessage">message ExecServerControlMessage</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        abort
+      </td>
+      <td>
+        <code title="agent.v1.ExecServerAbort">
+          
+          <a href="agent.v1.html#message-agent.v1.ExecServerAbort"><span title="agent.v1.ExecServerAbort">agent.v1.ExecServerAbort</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.ExecServerMessage">
+  <span>
+    <a href="#message-agent.v1.ExecServerMessage" title="agent.v1.ExecServerMessage">message ExecServerMessage</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        id
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        shell_args_id
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        write_args_bool
+      </td>
+      <td>
+        <code title="bool">
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        delete_args
+      </td>
+      <td>
+        <code title="agent.v1.DeleteArgs">
+          
+          <a href="agent.v1.html#message-agent.v1.DeleteArgs"><span title="agent.v1.DeleteArgs">agent.v1.DeleteArgs</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        grep_args
+      </td>
+      <td>
+        <code title="agent.v1.GrepArgs">
+          
+          <a href="agent.v1.html#message-agent.v1.GrepArgs"><span title="agent.v1.GrepArgs">agent.v1.GrepArgs</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>7</td>
+      <td>
+        read_args
+      </td>
+      <td>
+        <code title="agent.v1.ReadArgs">
+          
+          <a href="agent.v1.html#message-agent.v1.ReadArgs"><span title="agent.v1.ReadArgs">agent.v1.ReadArgs</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>8</td>
+      <td>
+        ls_args
+      </td>
+      <td>
+        <code title="agent.v1.LsArgs">
+          
+          <a href="agent.v1.html#message-agent.v1.LsArgs"><span title="agent.v1.LsArgs">agent.v1.LsArgs</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>9</td>
+      <td>
+        diagnostics_args
+      </td>
+      <td>
+        <code title="agent.v1.DiagnosticsArgs">
+          
+          <a href="agent.v1.html#message-agent.v1.DiagnosticsArgs"><span title="agent.v1.DiagnosticsArgs">agent.v1.DiagnosticsArgs</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>10</td>
+      <td>
+        request_context_args
+      </td>
+      <td>
+        <code title="agent.v1.RequestContextArgs">
+          
+          <a href="agent.v1.html#message-agent.v1.RequestContextArgs"><span title="agent.v1.RequestContextArgs">agent.v1.RequestContextArgs</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>11</td>
+      <td>
+        mcp_args
+      </td>
+      <td>
+        <code title="agent.v1.McpArgs">
+          
+          <a href="agent.v1.html#message-agent.v1.McpArgs"><span title="agent.v1.McpArgs">agent.v1.McpArgs</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>14</td>
+      <td>
+        shell_stream_args
+      </td>
+      <td>
+        <code title="agent.v1.ShellArgs">
+          
+          <a href="agent.v1.html#message-agent.v1.ShellArgs"><span title="agent.v1.ShellArgs">agent.v1.ShellArgs</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>15</td>
+      <td>
+        exec_id
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>16</td>
+      <td>
+        background_shell_spawn_args
+      </td>
+      <td>
+        <code title="agent.v1.BackgroundShellSpawnArgs">
+          
+          <a href="agent.v1.html#message-agent.v1.BackgroundShellSpawnArgs"><span title="agent.v1.BackgroundShellSpawnArgs">agent.v1.BackgroundShellSpawnArgs</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>19</td>
+      <td>
+        context_header
+      </td>
+      <td>
+        <code title="agent.v1.ContextHeader">
+          
+          <a href="agent.v1.html#message-agent.v1.ContextHeader"><span title="agent.v1.ContextHeader">agent.v1.ContextHeader</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.ExecutePlanAction">
+  <span>
+    <a href="#message-agent.v1.ExecutePlanAction" title="agent.v1.ExecutePlanAction">message ExecutePlanAction</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.FileEntry">
+  <span>
+    <a href="#message-agent.v1.FileEntry" title="agent.v1.FileEntry">message FileEntry</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.GetBlobArgs">
+  <span>
+    <a href="#message-agent.v1.GetBlobArgs" title="agent.v1.GetBlobArgs">message GetBlobArgs</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.GetBlobResult">
+  <span>
+    <a href="#message-agent.v1.GetBlobResult" title="agent.v1.GetBlobResult">message GetBlobResult</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.GitRepo">
+  <span>
+    <a href="#message-agent.v1.GitRepo" title="agent.v1.GitRepo">message GitRepo</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        path
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        status
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.GrepArgs">
+  <span>
+    <a href="#message-agent.v1.GrepArgs" title="agent.v1.GrepArgs">message GrepArgs</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.GrepResult">
+  <span>
+    <a href="#message-agent.v1.GrepResult" title="agent.v1.GrepResult">message GrepResult</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.HeartbeatUpdate">
+  <span>
+    <a href="#message-agent.v1.HeartbeatUpdate" title="agent.v1.HeartbeatUpdate">message HeartbeatUpdate</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.InteractionUpdate">
+  <span>
+    <a href="#message-agent.v1.InteractionUpdate" title="agent.v1.InteractionUpdate">message InteractionUpdate</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        text_delta
+      </td>
+      <td>
+        <code title="agent.v1.TextDeltaUpdate">
+          
+          <a href="agent.v1.html#message-agent.v1.TextDeltaUpdate"><span title="agent.v1.TextDeltaUpdate">agent.v1.TextDeltaUpdate</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        tool_call_started
+      </td>
+      <td>
+        <code title="agent.v1.ToolCallStartedUpdate">
+          
+          <a href="agent.v1.html#message-agent.v1.ToolCallStartedUpdate"><span title="agent.v1.ToolCallStartedUpdate">agent.v1.ToolCallStartedUpdate</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        tool_call_completed
+      </td>
+      <td>
+        <code title="agent.v1.ToolCallCompletedUpdate">
+          
+          <a href="agent.v1.html#message-agent.v1.ToolCallCompletedUpdate"><span title="agent.v1.ToolCallCompletedUpdate">agent.v1.ToolCallCompletedUpdate</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        thinking_delta
+      </td>
+      <td>
+        <code title="agent.v1.ThinkingDeltaUpdate">
+          
+          <a href="agent.v1.html#message-agent.v1.ThinkingDeltaUpdate"><span title="agent.v1.ThinkingDeltaUpdate">agent.v1.ThinkingDeltaUpdate</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        thinking_completed
+      </td>
+      <td>
+        <code title="agent.v1.ThinkingCompletedUpdate">
+          
+          <a href="agent.v1.html#message-agent.v1.ThinkingCompletedUpdate"><span title="agent.v1.ThinkingCompletedUpdate">agent.v1.ThinkingCompletedUpdate</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>6</td>
+      <td>
+        user_message_appended
+      </td>
+      <td>
+        <code title="agent.v1.UserMessageAppendedUpdate">
+          
+          <a href="agent.v1.html#message-agent.v1.UserMessageAppendedUpdate"><span title="agent.v1.UserMessageAppendedUpdate">agent.v1.UserMessageAppendedUpdate</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>7</td>
+      <td>
+        partial_tool_call
+      </td>
+      <td>
+        <code title="agent.v1.PartialToolCallUpdate">
+          
+          <a href="agent.v1.html#message-agent.v1.PartialToolCallUpdate"><span title="agent.v1.PartialToolCallUpdate">agent.v1.PartialToolCallUpdate</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>8</td>
+      <td>
+        token_delta
+      </td>
+      <td>
+        <code title="agent.v1.TokenDeltaUpdate">
+          
+          <a href="agent.v1.html#message-agent.v1.TokenDeltaUpdate"><span title="agent.v1.TokenDeltaUpdate">agent.v1.TokenDeltaUpdate</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>9</td>
+      <td>
+        summary
+      </td>
+      <td>
+        <code title="agent.v1.SummaryUpdate">
+          
+          <a href="agent.v1.html#message-agent.v1.SummaryUpdate"><span title="agent.v1.SummaryUpdate">agent.v1.SummaryUpdate</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>10</td>
+      <td>
+        summary_started
+      </td>
+      <td>
+        <code title="agent.v1.SummaryStartedUpdate">
+          
+          <a href="agent.v1.html#message-agent.v1.SummaryStartedUpdate"><span title="agent.v1.SummaryStartedUpdate">agent.v1.SummaryStartedUpdate</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>11</td>
+      <td>
+        summary_completed
+      </td>
+      <td>
+        <code title="agent.v1.SummaryCompletedUpdate">
+          
+          <a href="agent.v1.html#message-agent.v1.SummaryCompletedUpdate"><span title="agent.v1.SummaryCompletedUpdate">agent.v1.SummaryCompletedUpdate</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>12</td>
+      <td>
+        shell_output_delta
+      </td>
+      <td>
+        <code title="agent.v1.ShellOutputDeltaUpdate">
+          
+          <a href="agent.v1.html#message-agent.v1.ShellOutputDeltaUpdate"><span title="agent.v1.ShellOutputDeltaUpdate">agent.v1.ShellOutputDeltaUpdate</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>13</td>
+      <td>
+        heartbeat
+      </td>
+      <td>
+        <code title="agent.v1.HeartbeatUpdate">
+          
+          <a href="agent.v1.html#message-agent.v1.HeartbeatUpdate"><span title="agent.v1.HeartbeatUpdate">agent.v1.HeartbeatUpdate</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>14</td>
+      <td>
+        turn_ended
+      </td>
+      <td>
+        <code title="agent.v1.TurnEndedUpdate">
+          
+          <a href="agent.v1.html#message-agent.v1.TurnEndedUpdate"><span title="agent.v1.TurnEndedUpdate">agent.v1.TurnEndedUpdate</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>15</td>
+      <td>
+        tool_call_delta
+      </td>
+      <td>
+        <code title="agent.v1.ToolCallDeltaUpdate">
+          
+          <a href="agent.v1.html#message-agent.v1.ToolCallDeltaUpdate"><span title="agent.v1.ToolCallDeltaUpdate">agent.v1.ToolCallDeltaUpdate</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>16</td>
+      <td>
+        step_started
+      </td>
+      <td>
+        <code title="agent.v1.StepStartedUpdate">
+          
+          <a href="agent.v1.html#message-agent.v1.StepStartedUpdate"><span title="agent.v1.StepStartedUpdate">agent.v1.StepStartedUpdate</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.KvClientMessage">
+  <span>
+    <a href="#message-agent.v1.KvClientMessage" title="agent.v1.KvClientMessage">message KvClientMessage</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        id
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        get_blob_result
+      </td>
+      <td>
+        <code title="agent.v1.GetBlobResult">
+          
+          <a href="agent.v1.html#message-agent.v1.GetBlobResult"><span title="agent.v1.GetBlobResult">agent.v1.GetBlobResult</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        set_blob_result
+      </td>
+      <td>
+        <code title="agent.v1.SetBlobResult">
+          
+          <a href="agent.v1.html#message-agent.v1.SetBlobResult"><span title="agent.v1.SetBlobResult">agent.v1.SetBlobResult</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.KvServerMessage">
+  <span>
+    <a href="#message-agent.v1.KvServerMessage" title="agent.v1.KvServerMessage">message KvServerMessage</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        id
+      </td>
+      <td>
+        <code title="int64">
+          
+          <span>int64</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        get_blob_args
+      </td>
+      <td>
+        <code title="agent.v1.GetBlobArgs">
+          
+          <a href="agent.v1.html#message-agent.v1.GetBlobArgs"><span title="agent.v1.GetBlobArgs">agent.v1.GetBlobArgs</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        set_blob_args
+      </td>
+      <td>
+        <code title="agent.v1.SetBlobArgs">
+          
+          <a href="agent.v1.html#message-agent.v1.SetBlobArgs"><span title="agent.v1.SetBlobArgs">agent.v1.SetBlobArgs</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.LsArgs">
+  <span>
+    <a href="#message-agent.v1.LsArgs" title="agent.v1.LsArgs">message LsArgs</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.LsResult">
+  <span>
+    <a href="#message-agent.v1.LsResult" title="agent.v1.LsResult">message LsResult</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.McpArgs">
+  <span>
+    <a href="#message-agent.v1.McpArgs" title="agent.v1.McpArgs">message McpArgs</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.McpResult">
+  <span>
+    <a href="#message-agent.v1.McpResult" title="agent.v1.McpResult">message McpResult</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.McpTools">
+  <span>
+    <a href="#message-agent.v1.McpTools" title="agent.v1.McpTools">message McpTools</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.ModelDetails">
+  <span>
+    <a href="#message-agent.v1.ModelDetails" title="agent.v1.ModelDetails">message ModelDetails</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        model_name
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.PartialToolCallUpdate">
+  <span>
+    <a href="#message-agent.v1.PartialToolCallUpdate" title="agent.v1.PartialToolCallUpdate">message PartialToolCallUpdate</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.ProjectLayout">
+  <span>
+    <a href="#message-agent.v1.ProjectLayout" title="agent.v1.ProjectLayout">message ProjectLayout</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        abs_path
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        children_dirs
+      </td>
+      <td>
+        <code title="agent.v1.ProjectLayout">
+          
+            repeated
+          
+          <a href="agent.v1.html#message-agent.v1.ProjectLayout"><span title="agent.v1.ProjectLayout">agent.v1.ProjectLayout</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        children_files
+      </td>
+      <td>
+        <code title="agent.v1.FileEntry">
+          
+            repeated
+          
+          <a href="agent.v1.html#message-agent.v1.FileEntry"><span title="agent.v1.FileEntry">agent.v1.FileEntry</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        children_were_processed
+      </td>
+      <td>
+        <code title="bool">
+          
+          <span>bool</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.ReadArgs">
+  <span>
+    <a href="#message-agent.v1.ReadArgs" title="agent.v1.ReadArgs">message ReadArgs</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.ReadResult">
+  <span>
+    <a href="#message-agent.v1.ReadResult" title="agent.v1.ReadResult">message ReadResult</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.RequestContext">
+  <span>
+    <a href="#message-agent.v1.RequestContext" title="agent.v1.RequestContext">message RequestContext</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        workspace_path
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        env
+      </td>
+      <td>
+        <code title="agent.v1.RequestContextEnv">
+          
+          <a href="agent.v1.html#message-agent.v1.RequestContextEnv"><span title="agent.v1.RequestContextEnv">agent.v1.RequestContextEnv</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        shared_notes_listing
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        git_repos
+      </td>
+      <td>
+        <code title="agent.v1.GitRepo">
+          
+            repeated
+          
+          <a href="agent.v1.html#message-agent.v1.GitRepo"><span title="agent.v1.GitRepo">agent.v1.GitRepo</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        project_layouts
+      </td>
+      <td>
+        <code title="agent.v1.ProjectLayout">
+          
+            repeated
+          
+          <a href="agent.v1.html#message-agent.v1.ProjectLayout"><span title="agent.v1.ProjectLayout">agent.v1.ProjectLayout</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.RequestContextArgs">
+  <span>
+    <a href="#message-agent.v1.RequestContextArgs" title="agent.v1.RequestContextArgs">message RequestContextArgs</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.RequestContextEnv">
+  <span>
+    <a href="#message-agent.v1.RequestContextEnv" title="agent.v1.RequestContextEnv">message RequestContextEnv</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        os_version
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        workspace_paths
+      </td>
+      <td>
+        <code title="string">
+          
+            repeated
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>3</td>
+      <td>
+        shell
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>4</td>
+      <td>
+        terminals_folder
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>5</td>
+      <td>
+        agent_shared_notes_folder
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.RequestContextResult">
+  <span>
+    <a href="#message-agent.v1.RequestContextResult" title="agent.v1.RequestContextResult">message RequestContextResult</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        success
+      </td>
+      <td>
+        <code title="agent.v1.RequestContextSuccess">
+          
+          <a href="agent.v1.html#message-agent.v1.RequestContextSuccess"><span title="agent.v1.RequestContextSuccess">agent.v1.RequestContextSuccess</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.RequestContextSuccess">
+  <span>
+    <a href="#message-agent.v1.RequestContextSuccess" title="agent.v1.RequestContextSuccess">message RequestContextSuccess</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        request_context
+      </td>
+      <td>
+        <code title="agent.v1.RequestContext">
+          
+          <a href="agent.v1.html#message-agent.v1.RequestContext"><span title="agent.v1.RequestContext">agent.v1.RequestContext</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.ResumeAction">
+  <span>
+    <a href="#message-agent.v1.ResumeAction" title="agent.v1.ResumeAction">message ResumeAction</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.SetBlobArgs">
+  <span>
+    <a href="#message-agent.v1.SetBlobArgs" title="agent.v1.SetBlobArgs">message SetBlobArgs</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        blob_id
+      </td>
+      <td>
+        <code title="bytes">
+          
+          <span>bytes</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    <tr>
+      <td>2</td>
+      <td>
+        blob_data
+      </td>
+      <td>
+        <code title="bytes">
+          
+          <span>bytes</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.SetBlobResult">
+  <span>
+    <a href="#message-agent.v1.SetBlobResult" title="agent.v1.SetBlobResult">message SetBlobResult</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.ShellArgs">
+  <span>
+    <a href="#message-agent.v1.ShellArgs" title="agent.v1.ShellArgs">message ShellArgs</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.ShellCommandAction">
+  <span>
+    <a href="#message-agent.v1.ShellCommandAction" title="agent.v1.ShellCommandAction">message ShellCommandAction</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.ShellOutputDeltaUpdate">
+  <span>
+    <a href="#message-agent.v1.ShellOutputDeltaUpdate" title="agent.v1.ShellOutputDeltaUpdate">message ShellOutputDeltaUpdate</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.ShellResult">
+  <span>
+    <a href="#message-agent.v1.ShellResult" title="agent.v1.ShellResult">message ShellResult</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.ShellStream">
+  <span>
+    <a href="#message-agent.v1.ShellStream" title="agent.v1.ShellStream">message ShellStream</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.StartPlanAction">
+  <span>
+    <a href="#message-agent.v1.StartPlanAction" title="agent.v1.StartPlanAction">message StartPlanAction</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.StepStartedUpdate">
+  <span>
+    <a href="#message-agent.v1.StepStartedUpdate" title="agent.v1.StepStartedUpdate">message StepStartedUpdate</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.SummarizeAction">
+  <span>
+    <a href="#message-agent.v1.SummarizeAction" title="agent.v1.SummarizeAction">message SummarizeAction</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.SummaryCompletedUpdate">
+  <span>
+    <a href="#message-agent.v1.SummaryCompletedUpdate" title="agent.v1.SummaryCompletedUpdate">message SummaryCompletedUpdate</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.SummaryStartedUpdate">
+  <span>
+    <a href="#message-agent.v1.SummaryStartedUpdate" title="agent.v1.SummaryStartedUpdate">message SummaryStartedUpdate</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.SummaryUpdate">
+  <span>
+    <a href="#message-agent.v1.SummaryUpdate" title="agent.v1.SummaryUpdate">message SummaryUpdate</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.TextDeltaUpdate">
+  <span>
+    <a href="#message-agent.v1.TextDeltaUpdate" title="agent.v1.TextDeltaUpdate">message TextDeltaUpdate</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        text
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.ThinkingCompletedUpdate">
+  <span>
+    <a href="#message-agent.v1.ThinkingCompletedUpdate" title="agent.v1.ThinkingCompletedUpdate">message ThinkingCompletedUpdate</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        thinking_duration_ms
+      </td>
+      <td>
+        <code title="int32">
+          
+          <span>int32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.ThinkingDeltaUpdate">
+  <span>
+    <a href="#message-agent.v1.ThinkingDeltaUpdate" title="agent.v1.ThinkingDeltaUpdate">message ThinkingDeltaUpdate</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.TokenDeltaUpdate">
+  <span>
+    <a href="#message-agent.v1.TokenDeltaUpdate" title="agent.v1.TokenDeltaUpdate">message TokenDeltaUpdate</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        tokens
+      </td>
+      <td>
+        <code title="int32">
+          
+          <span>int32</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.ToolCallCompletedUpdate">
+  <span>
+    <a href="#message-agent.v1.ToolCallCompletedUpdate" title="agent.v1.ToolCallCompletedUpdate">message ToolCallCompletedUpdate</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.ToolCallDeltaUpdate">
+  <span>
+    <a href="#message-agent.v1.ToolCallDeltaUpdate" title="agent.v1.ToolCallDeltaUpdate">message ToolCallDeltaUpdate</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.ToolCallStartedUpdate">
+  <span>
+    <a href="#message-agent.v1.ToolCallStartedUpdate" title="agent.v1.ToolCallStartedUpdate">message ToolCallStartedUpdate</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.TurnEndedUpdate">
+  <span>
+    <a href="#message-agent.v1.TurnEndedUpdate" title="agent.v1.TurnEndedUpdate">message TurnEndedUpdate</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.UserMessage">
+  <span>
+    <a href="#message-agent.v1.UserMessage" title="agent.v1.UserMessage">message UserMessage</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        text
+      </td>
+      <td>
+        <code title="string">
+          
+          <span>string</span>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.UserMessageAction">
+  <span>
+    <a href="#message-agent.v1.UserMessageAction" title="agent.v1.UserMessageAction">message UserMessageAction</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        user_message
+      </td>
+      <td>
+        <code title="agent.v1.UserMessage">
+          
+          <a href="agent.v1.html#message-agent.v1.UserMessage"><span title="agent.v1.UserMessage">agent.v1.UserMessage</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.UserMessageAppendedUpdate">
+  <span>
+    <a href="#message-agent.v1.UserMessageAppendedUpdate" title="agent.v1.UserMessageAppendedUpdate">message UserMessageAppendedUpdate</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+      <td>1</td>
+      <td>
+        user_message
+      </td>
+      <td>
+        <code title="agent.v1.UserMessage">
+          
+          <a href="agent.v1.html#message-agent.v1.UserMessage"><span title="agent.v1.UserMessage">agent.v1.UserMessage</span>
+    </a>
+        </code>
+      </td>
+      <td class="content"></td>
+      
+    </tr>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.WriteArgs">
+  <span>
+    <a href="#message-agent.v1.WriteArgs" title="agent.v1.WriteArgs">message WriteArgs</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+      
+      <div class="block">
+        
+
+<h4 class="title is-4 type-heading" id="message-agent.v1.WriteResult">
+  <span>
+    <a href="#message-agent.v1.WriteResult" title="agent.v1.WriteResult">message WriteResult</a>
+  
+  </span>
+  
+</h4>
+
+<div class="block content">
+  
+</div>
+
+<table class="table is-fullwidth is-hoverable is-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+ 
+      </div>
+      
+    
+
+  
+
+  
+
+</div>
+
+    <footer class="footer">
+      <div class="content has-text-centered">
+        
+        <p>Built with <strong><a href="https://github.com/markvincze/sabledocs" target="_blank">sabledocs</a></strong>.</p>
+      </div>
+    </footer>
+  </body>
+</html>

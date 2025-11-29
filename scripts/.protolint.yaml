@@ -1,0 +1,5 @@
+lint:
+  rules:
+    remove:
+      - REPEATED_FIELD_NAMES_PLURALIZED
+

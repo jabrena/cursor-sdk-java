@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cursor SDK Protobuf schema</title>
+    <link rel="stylesheet" href="static/mystyles.css" />
+    <script src="static/fontawesome.js"></script>
+    <script src="static/lunr.js"></script>
+    <script src="static/theme.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="level pt-6 mb-5 pb-2 bottom-border">
+        <div class="level-left">
+          <p class="level-item has-text-centered is-size-3 has-text-weight-medium">
+            <a class="link is-info" href="index.html">
+              Cursor SDK Protobuf schema
+            </a>
+          </p>
+        </div>
+
+        <div class="level-right">
+          
+          <form action="search.html" class="mr-2 has-text-centered">
+            <input type="text" name="query" class="input mr-3 navbar-search-query-input" placeholder="Search">
+            <input type="submit" class="button is-primary mr-5" value="Search" />
+          </form>
+          
+
+          <p class="level-item has-text-centered is-size-5">
+            <a href="" class="link is-info mr-5" target="_blank">
+              
+              <span>Source</span>
+            </a>
+
+            <button class="theme-toggle" id="theme-toggle" title="Toggles light & dark" aria-label="auto" aria-live="polite" type="button">
+              <svg class="sun-and-moon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+                <mask class="moon" id="moon-mask">
+                  <rect x="0" y="0" width="100%" height="100%" fill="white" />
+                  <circle cx="24" cy="10" r="6" fill="black" />
+                </mask>
+                <circle class="sun" cx="12" cy="12" r="6" mask="url(#moon-mask)" fill="currentColor" />
+                <g class="sun-beams" stroke="currentColor">
+                  <line x1="12" y1="1" x2="12" y2="3" />
+                  <line x1="12" y1="21" x2="12" y2="23" />
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                  <line x1="1" y1="12" x2="3" y2="12" />
+                  <line x1="21" y1="12" x2="23" y2="12" />
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                </g>
+              </svg>
+            </button>
+          </p>
+        </div>
+      </nav>
+    </div>
+
+    <div id="main-content" class="container mb-6">
+<script>
+    const searchDocuments =  {"agent.v1": {"package": "agent.v1", "url": "agent.v1.html", "content": "agent.v1\n\nagent\nv1\nAgentService\n\nRun\n\nagent\nv1\nAgentClientMessage\nagent\nv1\nAgentServerMessage\nagent\nv1\nAgentClientMessage\nrun_request\n\nexec_client_message\n\nkv_client_message\n\nconversation_action\n\nexec_client_control_message\n\nagent\nv1\nAgentRunRequest\nconversation_state\n\naction\n\nmodel_details\n\nmcp_tools\n\nconversation_id\n\nagent\nv1\nAgentServerMessage\ninteraction_update\n\nexec_server_message\n\nconversation_checkpoint_update\n\nkv_server_message\n\nexec_server_control_message\n\nagent\nv1\nBackgroundShellSpawnArgs\nagent\nv1\nBackgroundShellSpawnResult\nagent\nv1\nCancelAction\nagent\nv1\nContextHeader\nid\n\nfield_2\n\nfield_3\n\nagent\nv1\nConversationAction\nuser_message_action\n\nresume_action\n\ncancel_action\n\nsummarize_action\n\nshell_command_action\n\nstart_plan_action\n\nexecute_plan_action\n\nagent\nv1\nConversationStateStructure\nroot_prompt_messages_json\n\nturns_old\n\ntodos\n\npending_tool_calls\n\ntoken_details\n\nsummary\n\nplan\n\nturns\n\nagent\nv1\nConversationTokenDetails\nused_tokens\n\nmax_tokens\n\nagent\nv1\nDeleteArgs\nagent\nv1\nDeleteResult\nagent\nv1\nDiagnosticsArgs\nagent\nv1\nDiagnosticsResult\nagent\nv1\nExecClientControlMessage\nstream_close\n\nthrow\n\nagent\nv1\nExecClientMessage\nid\n\nshell_result\n\nwrite_result_bool\n\ndelete_result\n\ngrep_result\n\nread_result\n\nls_result\n\ndiagnostics_result\n\nrequest_context_result\n\nmcp_result\n\nshell_stream\n\nexec_id\n\nbackground_shell_spawn_result\n\ncontext_header\n\nagent\nv1\nExecClientStreamClose\nagent\nv1\nExecClientThrow\nagent\nv1\nExecServerAbort\nagent\nv1\nExecServerControlMessage\nabort\n\nagent\nv1\nExecServerMessage\nid\n\nshell_args_id\n\nwrite_args_bool\n\ndelete_args\n\ngrep_args\n\nread_args\n\nls_args\n\ndiagnostics_args\n\nrequest_context_args\n\nmcp_args\n\nshell_stream_args\n\nexec_id\n\nbackground_shell_spawn_args\n\ncontext_header\n\nagent\nv1\nExecutePlanAction\nagent\nv1\nFileEntry\nname\n\nagent\nv1\nGetBlobArgs\nagent\nv1\nGetBlobResult\nagent\nv1\nGitRepo\npath\n\nstatus\n\nagent\nv1\nGrepArgs\nagent\nv1\nGrepResult\nagent\nv1\nHeartbeatUpdate\nagent\nv1\nInteractionUpdate\ntext_delta\n\ntool_call_started\n\ntool_call_completed\n\nthinking_delta\n\nthinking_completed\n\nuser_message_appended\n\npartial_tool_call\n\ntoken_delta\n\nsummary\n\nsummary_started\n\nsummary_completed\n\nshell_output_delta\n\nheartbeat\n\nturn_ended\n\ntool_call_delta\n\nstep_started\n\nagent\nv1\nKvClientMessage\nid\n\nget_blob_result\n\nset_blob_result\n\nagent\nv1\nKvServerMessage\nid\n\nget_blob_args\n\nset_blob_args\n\nagent\nv1\nLsArgs\nagent\nv1\nLsResult\nagent\nv1\nMcpArgs\nagent\nv1\nMcpResult\nagent\nv1\nMcpTools\nagent\nv1\nModelDetails\nmodel_name\n\nagent\nv1\nPartialToolCallUpdate\nagent\nv1\nProjectLayout\nabs_path\n\nchildren_dirs\n\nchildren_files\n\nchildren_were_processed\n\nagent\nv1\nReadArgs\nagent\nv1\nReadResult\nagent\nv1\nRequestContext\nworkspace_path\n\nenv\n\nshared_notes_listing\n\ngit_repos\n\nproject_layouts\n\nagent\nv1\nRequestContextArgs\nagent\nv1\nRequestContextEnv\nos_version\n\nworkspace_paths\n\nshell\n\nterminals_folder\n\nagent_shared_notes_folder\n\nagent\nv1\nRequestContextResult\nsuccess\n\nagent\nv1\nRequestContextSuccess\nrequest_context\n\nagent\nv1\nResumeAction\nagent\nv1\nSetBlobArgs\nblob_id\n\nblob_data\n\nagent\nv1\nSetBlobResult\nagent\nv1\nShellArgs\nagent\nv1\nShellCommandAction\nagent\nv1\nShellOutputDeltaUpdate\nagent\nv1\nShellResult\nagent\nv1\nShellStream\nagent\nv1\nStartPlanAction\nagent\nv1\nStepStartedUpdate\nagent\nv1\nSummarizeAction\nagent\nv1\nSummaryCompletedUpdate\nagent\nv1\nSummaryStartedUpdate\nagent\nv1\nSummaryUpdate\nagent\nv1\nTextDeltaUpdate\ntext\n\nagent\nv1\nThinkingCompletedUpdate\nthinking_duration_ms\n\nagent\nv1\nThinkingDeltaUpdate\nagent\nv1\nTokenDeltaUpdate\ntokens\n\nagent\nv1\nToolCallCompletedUpdate\nagent\nv1\nToolCallDeltaUpdate\nagent\nv1\nToolCallStartedUpdate\nagent\nv1\nTurnEndedUpdate\nagent\nv1\nUserMessage\ntext\n\nagent\nv1\nUserMessageAction\nuser_message\n\nagent\nv1\nUserMessageAppendedUpdate\nuser_message\n\nagent\nv1\nWriteArgs\nagent\nv1\nWriteResult\n"}};
+    const searchIndex = {"version": "2.3.9", "fields": ["content", "url"], "fieldVectors": [["content/agent.v1", [0, 0.288, 1, 0.623, 2, 0.623, 3, 0.288, 4, 0.288, 5, 0.396, 6, 0.396, 7, 0.288, 8, 0.288, 9, 0.288, 10, 0.288, 11, 0.288, 12, 0.288, 13, 0.288, 14, 0.288, 15, 0.288, 16, 0.288, 17, 0.288, 18, 0.288, 19, 0.288, 20, 0.288, 21, 0.288, 22, 0.288, 23, 0.288, 24, 0.288, 25, 0.288, 26, 0.288, 27, 0.51, 28, 0.288, 29, 0.288, 30, 0.288, 31, 0.288, 32, 0.288, 33, 0.288, 34, 0.288, 35, 0.288, 36, 0.288, 37, 0.288, 38, 0.288, 39, 0.288, 40, 0.288, 41, 0.288, 42, 0.288, 43, 0.288, 44, 0.396, 45, 0.288, 46, 0.288, 47, 0.288, 48, 0.288, 49, 0.288, 50, 0.288, 51, 0.288, 52, 0.288, 53, 0.288, 54, 0.288, 55, 0.288, 56, 0.288, 57, 0.288, 58, 0.288, 59, 0.288, 60, 0.288, 61, 0.288, 62, 0.288, 63, 0.288, 64, 0.288, 65, 0.288, 66, 0.288, 67, 0.288, 68, 0.396, 69, 0.288, 70, 0.396, 71, 0.288, 72, 0.288, 73, 0.288, 74, 0.288, 75, 0.288, 76, 0.288, 77, 0.288, 78, 0.288, 79, 0.288, 80, 0.288, 81, 0.288, 82, 0.288, 83, 0.288, 84, 0.288, 85, 0.288, 86, 0.288, 87, 0.288, 88, 0.288, 89, 0.288, 90, 0.288, 91, 0.288, 92, 0.288, 93, 0.288, 94, 0.288, 95, 0.288, 96, 0.288, 97, 0.288, 98, 0.288, 99, 0.288, 100, 0.288, 101, 0.288, 102, 0.288, 103, 0.288, 104, 0.288, 105, 0.288, 106, 0.288, 107, 0.288, 108, 0.288, 109, 0.288, 110, 0.288, 111, 0.288, 112, 0.288, 113, 0.288, 114, 0.288, 115, 0.288, 116, 0.288, 117, 0.288, 118, 0.288, 119, 0.288, 120, 0.288, 121, 0.288, 122, 0.288, 123, 0.288, 124, 0.288, 125, 0.288, 126, 0.288, 127, 0.288, 128, 0.288, 129, 0.288, 130, 0.288, 131, 0.288, 132, 0.288, 133, 0.288, 134, 0.288, 135, 0.288, 136, 0.288, 137, 0.396, 138, 0.288, 139, 0.288, 140, 0.288, 141, 0.288, 142, 0.288, 143, 0.288, 144, 0.288, 145, 0.288, 146, 0.288, 147, 0.288, 148, 0.288, 149, 0.288, 150, 0.288, 151, 0.288, 152, 0.288, 153, 0.288, 154, 0.288, 155, 0.288, 156, 0.288, 157, 0.288, 158, 0.288, 159, 0.288, 160, 0.288, 161, 0.288, 162, 0.288, 163, 0.288, 164, 0.288, 165, 0.288, 166, 0.288, 167, 0.288, 168, 0.288, 169, 0.396, 170, 0.288, 171, 0.288, 172, 0.288, 173, 0.288, 174, 0.288, 175, 0.288, 176, 0.288, 177, 0.288, 178, 0.288, 179, 0.288, 180, 0.288, 181, 0.396, 182, 0.288, 183, 0.288, 184, 0.288]], ["url/agent.v1", [185, 0.288]]], "invertedIndex": [["abort", {"content": {"agent.v1": {}}, "url": {}, "_index": 75}], ["abs_path", {"content": {"agent.v1": {}}, "url": {}, "_index": 130}], ["action", {"content": {"agent.v1": {}}, "url": {}, "_index": 14}], ["agent", {"content": {"agent.v1": {}}, "url": {}, "_index": 1}], ["agent.v1", {"content": {"agent.v1": {}}, "url": {}, "_index": 0}], ["agent.v1.html", {"content": {}, "url": {"agent.v1": {}}, "_index": 185}], ["agent_shared_notes_fold", {"content": {"agent.v1": {}}, "url": {}, "_index": 147}], ["agentclientmessag", {"content": {"agent.v1": {}}, "url": {}, "_index": 5}], ["agentrunrequest", {"content": {"agent.v1": {}}, "url": {}, "_index": 12}], ["agentservermessag", {"content": {"agent.v1": {}}, "url": {}, "_index": 6}], ["agentservic", {"content": {"agent.v1": {}}, "url": {}, "_index": 3}], ["background_shell_spawn_arg", {"content": {"agent.v1": {}}, "url": {}, "_index": 87}], ["background_shell_spawn_result", {"content": {"agent.v1": {}}, "url": {}, "_index": 69}], ["backgroundshellspawnarg", {"content": {"agent.v1": {}}, "url": {}, "_index": 23}], ["backgroundshellspawnresult", {"content": {"agent.v1": {}}, "url": {}, "_index": 24}], ["blob_data", {"content": {"agent.v1": {}}, "url": {}, "_index": 155}], ["blob_id", {"content": {"agent.v1": {}}, "url": {}, "_index": 154}], ["cancel_act", {"content": {"agent.v1": {}}, "url": {}, "_index": 33}], ["cancelact", {"content": {"agent.v1": {}}, "url": {}, "_index": 25}], ["children_dir", {"content": {"agent.v1": {}}, "url": {}, "_index": 131}], ["children_fil", {"content": {"agent.v1": {}}, "url": {}, "_index": 132}], ["children_were_process", {"content": {"agent.v1": {}}, "url": {}, "_index": 133}], ["context_head", {"content": {"agent.v1": {}}, "url": {}, "_index": 70}], ["contexthead", {"content": {"agent.v1": {}}, "url": {}, "_index": 26}], ["conversation_act", {"content": {"agent.v1": {}}, "url": {}, "_index": 10}], ["conversation_checkpoint_upd", {"content": {"agent.v1": {}}, "url": {}, "_index": 20}], ["conversation_id", {"content": {"agent.v1": {}}, "url": {}, "_index": 17}], ["conversation_st", {"content": {"agent.v1": {}}, "url": {}, "_index": 13}], ["conversationact", {"content": {"agent.v1": {}}, "url": {}, "_index": 30}], ["conversationstatestructur", {"content": {"agent.v1": {}}, "url": {}, "_index": 38}], ["conversationtokendetail", {"content": {"agent.v1": {}}, "url": {}, "_index": 47}], ["delete_arg", {"content": {"agent.v1": {}}, "url": {}, "_index": 79}], ["delete_result", {"content": {"agent.v1": {}}, "url": {}, "_index": 60}], ["deletearg", {"content": {"agent.v1": {}}, "url": {}, "_index": 50}], ["deleteresult", {"content": {"agent.v1": {}}, "url": {}, "_index": 51}], ["diagnostics_arg", {"content": {"agent.v1": {}}, "url": {}, "_index": 83}], ["diagnostics_result", {"content": {"agent.v1": {}}, "url": {}, "_index": 64}], ["diagnosticsarg", {"content": {"agent.v1": {}}, "url": {}, "_index": 52}], ["diagnosticsresult", {"content": {"agent.v1": {}}, "url": {}, "_index": 53}], ["env", {"content": {"agent.v1": {}}, "url": {}, "_index": 138}], ["exec_client_control_messag", {"content": {"agent.v1": {}}, "url": {}, "_index": 11}], ["exec_client_messag", {"content": {"agent.v1": {}}, "url": {}, "_index": 8}], ["exec_id", {"content": {"agent.v1": {}}, "url": {}, "_index": 68}], ["exec_server_control_messag", {"content": {"agent.v1": {}}, "url": {}, "_index": 22}], ["exec_server_messag", {"content": {"agent.v1": {}}, "url": {}, "_index": 19}], ["execclientcontrolmessag", {"content": {"agent.v1": {}}, "url": {}, "_index": 54}], ["execclientmessag", {"content": {"agent.v1": {}}, "url": {}, "_index": 57}], ["execclientstreamclos", {"content": {"agent.v1": {}}, "url": {}, "_index": 71}], ["execclientthrow", {"content": {"agent.v1": {}}, "url": {}, "_index": 72}], ["execserverabort", {"content": {"agent.v1": {}}, "url": {}, "_index": 73}], ["execservercontrolmessag", {"content": {"agent.v1": {}}, "url": {}, "_index": 74}], ["execservermessag", {"content": {"agent.v1": {}}, "url": {}, "_index": 76}], ["execute_plan_act", {"content": {"agent.v1": {}}, "url": {}, "_index": 37}], ["executeplanact", {"content": {"agent.v1": {}}, "url": {}, "_index": 88}], ["field_2", {"content": {"agent.v1": {}}, "url": {}, "_index": 28}], ["field_3", {"content": {"agent.v1": {}}, "url": {}, "_index": 29}], ["fileentri", {"content": {"agent.v1": {}}, "url": {}, "_index": 89}], ["get_blob_arg", {"content": {"agent.v1": {}}, "url": {}, "_index": 119}], ["get_blob_result", {"content": {"agent.v1": {}}, "url": {}, "_index": 116}], ["getblobarg", {"content": {"agent.v1": {}}, "url": {}, "_index": 91}], ["getblobresult", {"content": {"agent.v1": {}}, "url": {}, "_index": 92}], ["git_repo", {"content": {"agent.v1": {}}, "url": {}, "_index": 140}], ["gitrepo", {"content": {"agent.v1": {}}, "url": {}, "_index": 93}], ["grep_arg", {"content": {"agent.v1": {}}, "url": {}, "_index": 80}], ["grep_result", {"content": {"agent.v1": {}}, "url": {}, "_index": 61}], ["greparg", {"content": {"agent.v1": {}}, "url": {}, "_index": 96}], ["grepresult", {"content": {"agent.v1": {}}, "url": {}, "_index": 97}], ["heartbeat", {"content": {"agent.v1": {}}, "url": {}, "_index": 111}], ["heartbeatupd", {"content": {"agent.v1": {}}, "url": {}, "_index": 98}], ["id", {"content": {"agent.v1": {}}, "url": {}, "_index": 27}], ["interaction_upd", {"content": {"agent.v1": {}}, "url": {}, "_index": 18}], ["interactionupd", {"content": {"agent.v1": {}}, "url": {}, "_index": 99}], ["kv_client_messag", {"content": {"agent.v1": {}}, "url": {}, "_index": 9}], ["kv_server_messag", {"content": {"agent.v1": {}}, "url": {}, "_index": 21}], ["kvclientmessag", {"content": {"agent.v1": {}}, "url": {}, "_index": 115}], ["kvservermessag", {"content": {"agent.v1": {}}, "url": {}, "_index": 118}], ["ls_arg", {"content": {"agent.v1": {}}, "url": {}, "_index": 82}], ["ls_result", {"content": {"agent.v1": {}}, "url": {}, "_index": 63}], ["lsarg", {"content": {"agent.v1": {}}, "url": {}, "_index": 121}], ["lsresult", {"content": {"agent.v1": {}}, "url": {}, "_index": 122}], ["max_token", {"content": {"agent.v1": {}}, "url": {}, "_index": 49}], ["mcp_arg", {"content": {"agent.v1": {}}, "url": {}, "_index": 85}], ["mcp_result", {"content": {"agent.v1": {}}, "url": {}, "_index": 66}], ["mcp_tool", {"content": {"agent.v1": {}}, "url": {}, "_index": 16}], ["mcparg", {"content": {"agent.v1": {}}, "url": {}, "_index": 123}], ["mcpresult", {"content": {"agent.v1": {}}, "url": {}, "_index": 124}], ["mcptool", {"content": {"agent.v1": {}}, "url": {}, "_index": 125}], ["model_detail", {"content": {"agent.v1": {}}, "url": {}, "_index": 15}], ["model_nam", {"content": {"agent.v1": {}}, "url": {}, "_index": 127}], ["modeldetail", {"content": {"agent.v1": {}}, "url": {}, "_index": 126}], ["name", {"content": {"agent.v1": {}}, "url": {}, "_index": 90}], ["os_vers", {"content": {"agent.v1": {}}, "url": {}, "_index": 144}], ["partial_tool_cal", {"content": {"agent.v1": {}}, "url": {}, "_index": 106}], ["partialtoolcallupd", {"content": {"agent.v1": {}}, "url": {}, "_index": 128}], ["path", {"content": {"agent.v1": {}}, "url": {}, "_index": 94}], ["pending_tool_cal", {"content": {"agent.v1": {}}, "url": {}, "_index": 42}], ["plan", {"content": {"agent.v1": {}}, "url": {}, "_index": 45}], ["project_layout", {"content": {"agent.v1": {}}, "url": {}, "_index": 141}], ["projectlayout", {"content": {"agent.v1": {}}, "url": {}, "_index": 129}], ["read_arg", {"content": {"agent.v1": {}}, "url": {}, "_index": 81}], ["read_result", {"content": {"agent.v1": {}}, "url": {}, "_index": 62}], ["readarg", {"content": {"agent.v1": {}}, "url": {}, "_index": 134}], ["readresult", {"content": {"agent.v1": {}}, "url": {}, "_index": 135}], ["request_context", {"content": {"agent.v1": {}}, "url": {}, "_index": 151}], ["request_context_arg", {"content": {"agent.v1": {}}, "url": {}, "_index": 84}], ["request_context_result", {"content": {"agent.v1": {}}, "url": {}, "_index": 65}], ["requestcontext", {"content": {"agent.v1": {}}, "url": {}, "_index": 136}], ["requestcontextarg", {"content": {"agent.v1": {}}, "url": {}, "_index": 142}], ["requestcontextenv", {"content": {"agent.v1": {}}, "url": {}, "_index": 143}], ["requestcontextresult", {"content": {"agent.v1": {}}, "url": {}, "_index": 148}], ["requestcontextsuccess", {"content": {"agent.v1": {}}, "url": {}, "_index": 150}], ["resume_act", {"content": {"agent.v1": {}}, "url": {}, "_index": 32}], ["resumeact", {"content": {"agent.v1": {}}, "url": {}, "_index": 152}], ["root_prompt_messages_json", {"content": {"agent.v1": {}}, "url": {}, "_index": 39}], ["run", {"content": {"agent.v1": {}}, "url": {}, "_index": 4}], ["run_request", {"content": {"agent.v1": {}}, "url": {}, "_index": 7}], ["set_blob_arg", {"content": {"agent.v1": {}}, "url": {}, "_index": 120}], ["set_blob_result", {"content": {"agent.v1": {}}, "url": {}, "_index": 117}], ["setblobarg", {"content": {"agent.v1": {}}, "url": {}, "_index": 153}], ["setblobresult", {"content": {"agent.v1": {}}, "url": {}, "_index": 156}], ["shared_notes_list", {"content": {"agent.v1": {}}, "url": {}, "_index": 139}], ["shell", {"content": {"agent.v1": {}}, "url": {}, "_index": 145}], ["shell_args_id", {"content": {"agent.v1": {}}, "url": {}, "_index": 77}], ["shell_command_act", {"content": {"agent.v1": {}}, "url": {}, "_index": 35}], ["shell_output_delta", {"content": {"agent.v1": {}}, "url": {}, "_index": 110}], ["shell_result", {"content": {"agent.v1": {}}, "url": {}, "_index": 58}], ["shell_stream", {"content": {"agent.v1": {}}, "url": {}, "_index": 67}], ["shell_stream_arg", {"content": {"agent.v1": {}}, "url": {}, "_index": 86}], ["shellarg", {"content": {"agent.v1": {}}, "url": {}, "_index": 157}], ["shellcommandact", {"content": {"agent.v1": {}}, "url": {}, "_index": 158}], ["shelloutputdeltaupd", {"content": {"agent.v1": {}}, "url": {}, "_index": 159}], ["shellresult", {"content": {"agent.v1": {}}, "url": {}, "_index": 160}], ["shellstream", {"content": {"agent.v1": {}}, "url": {}, "_index": 161}], ["start_plan_act", {"content": {"agent.v1": {}}, "url": {}, "_index": 36}], ["startplanact", {"content": {"agent.v1": {}}, "url": {}, "_index": 162}], ["statu", {"content": {"agent.v1": {}}, "url": {}, "_index": 95}], ["step_start", {"content": {"agent.v1": {}}, "url": {}, "_index": 114}], ["stepstartedupd", {"content": {"agent.v1": {}}, "url": {}, "_index": 163}], ["stream_clos", {"content": {"agent.v1": {}}, "url": {}, "_index": 55}], ["success", {"content": {"agent.v1": {}}, "url": {}, "_index": 149}], ["summari", {"content": {"agent.v1": {}}, "url": {}, "_index": 44}], ["summarize_act", {"content": {"agent.v1": {}}, "url": {}, "_index": 34}], ["summarizeact", {"content": {"agent.v1": {}}, "url": {}, "_index": 164}], ["summary_complet", {"content": {"agent.v1": {}}, "url": {}, "_index": 109}], ["summary_start", {"content": {"agent.v1": {}}, "url": {}, "_index": 108}], ["summarycompletedupd", {"content": {"agent.v1": {}}, "url": {}, "_index": 165}], ["summarystartedupd", {"content": {"agent.v1": {}}, "url": {}, "_index": 166}], ["summaryupd", {"content": {"agent.v1": {}}, "url": {}, "_index": 167}], ["terminals_fold", {"content": {"agent.v1": {}}, "url": {}, "_index": 146}], ["text", {"content": {"agent.v1": {}}, "url": {}, "_index": 169}], ["text_delta", {"content": {"agent.v1": {}}, "url": {}, "_index": 100}], ["textdeltaupd", {"content": {"agent.v1": {}}, "url": {}, "_index": 168}], ["thinking_complet", {"content": {"agent.v1": {}}, "url": {}, "_index": 104}], ["thinking_delta", {"content": {"agent.v1": {}}, "url": {}, "_index": 103}], ["thinking_duration_m", {"content": {"agent.v1": {}}, "url": {}, "_index": 171}], ["thinkingcompletedupd", {"content": {"agent.v1": {}}, "url": {}, "_index": 170}], ["thinkingdeltaupd", {"content": {"agent.v1": {}}, "url": {}, "_index": 172}], ["throw", {"content": {"agent.v1": {}}, "url": {}, "_index": 56}], ["todo", {"content": {"agent.v1": {}}, "url": {}, "_index": 41}], ["token", {"content": {"agent.v1": {}}, "url": {}, "_index": 174}], ["token_delta", {"content": {"agent.v1": {}}, "url": {}, "_index": 107}], ["token_detail", {"content": {"agent.v1": {}}, "url": {}, "_index": 43}], ["tokendeltaupd", {"content": {"agent.v1": {}}, "url": {}, "_index": 173}], ["tool_call_complet", {"content": {"agent.v1": {}}, "url": {}, "_index": 102}], ["tool_call_delta", {"content": {"agent.v1": {}}, "url": {}, "_index": 113}], ["tool_call_start", {"content": {"agent.v1": {}}, "url": {}, "_index": 101}], ["toolcallcompletedupd", {"content": {"agent.v1": {}}, "url": {}, "_index": 175}], ["toolcalldeltaupd", {"content": {"agent.v1": {}}, "url": {}, "_index": 176}], ["toolcallstartedupd", {"content": {"agent.v1": {}}, "url": {}, "_index": 177}], ["turn", {"content": {"agent.v1": {}}, "url": {}, "_index": 46}], ["turn_end", {"content": {"agent.v1": {}}, "url": {}, "_index": 112}], ["turnendedupd", {"content": {"agent.v1": {}}, "url": {}, "_index": 178}], ["turns_old", {"content": {"agent.v1": {}}, "url": {}, "_index": 40}], ["used_token", {"content": {"agent.v1": {}}, "url": {}, "_index": 48}], ["user_messag", {"content": {"agent.v1": {}}, "url": {}, "_index": 181}], ["user_message_act", {"content": {"agent.v1": {}}, "url": {}, "_index": 31}], ["user_message_append", {"content": {"agent.v1": {}}, "url": {}, "_index": 105}], ["usermessag", {"content": {"agent.v1": {}}, "url": {}, "_index": 179}], ["usermessageact", {"content": {"agent.v1": {}}, "url": {}, "_index": 180}], ["usermessageappendedupd", {"content": {"agent.v1": {}}, "url": {}, "_index": 182}], ["v1", {"content": {"agent.v1": {}}, "url": {}, "_index": 2}], ["workspace_path", {"content": {"agent.v1": {}}, "url": {}, "_index": 137}], ["write_args_bool", {"content": {"agent.v1": {}}, "url": {}, "_index": 78}], ["write_result_bool", {"content": {"agent.v1": {}}, "url": {}, "_index": 59}], ["writearg", {"content": {"agent.v1": {}}, "url": {}, "_index": 183}], ["writeresult", {"content": {"agent.v1": {}}, "url": {}, "_index": 184}]], "pipeline": ["stemmer"]};
+
+    const idx = lunr.Index.load(searchIndex);
+
+    function displaySearchResults() {
+        const query = new URLSearchParams(window.location.search).get('query');
+
+        if (query) {
+            document.getElementById('mainInputQuery').value = query;
+
+            const results = idx.query(function (q) {
+              words = query.toLowerCase().split(" "); // toLowerCase() is needed to make the search case insensitive.
+              for (n in words) {
+                const word = words[n];
+
+                if (!word) {
+                  continue;
+                }
+
+                // look for an exact match and apply a large positive boost
+                q.term(word, { usePipeline: true, boost: 100 })
+
+                // look for terms that match the beginning of this queryTerm and apply a medium boost
+                q.term(word + "*", { usePipeline: false, boost: 10 })
+              }
+            });
+
+            const searchResults = document.getElementById('searchResults');
+
+            if (results.length > 0) {
+                let resultList = ''
+                for (const n in results) {
+                    // Use the unique ref from the results list to get the full item
+                    // so you can build its <li>
+                    const doc = searchDocuments[results[n].ref]
+                    resultList += '<h5 class="title is-5 mt-3"><a href="' + doc.url + '">' + doc.package + '</a></h5>'
+                    // Add a short clip of the content
+                    resultList += '<p>' + doc.content.substring(0, 150) + '...</p><hr />'
+                }
+                searchResults.innerHTML = resultList
+            } else {
+                searchResults.innerHTML = '<p>No search results.</p>';
+            }
+        }
+    }
+
+    window.addEventListener("load", displaySearchResults);
+</script>
+
+  <div>
+    <p class="block">
+      Enter a query to search this documentation.
+    </p>
+    <div class="field is-horizontal">
+      <form class="field-body">
+        <div class="field">
+          <p class="control is-expanded">
+            <input id="mainInputQuery" type="text" name="query" class="input" placeholder="Search query">
+          </p>
+        </div>
+        <div class="field">
+          <p class="control is-expanded">
+            <input type="submit" class="button is-primary" value="Search" />
+          </p>
+        </div>
+      </form>
+    </div>
+    <div class="block mt-6">
+      <div id="searchResults"></div>
+    </div>
+  </div>
+</div>
+
+    <footer class="footer">
+      <div class="content has-text-centered">
+        
+        <p>Built with <strong><a href="https://github.com/markvincze/sabledocs" target="_blank">sabledocs</a></strong>.</p>
+      </div>
+    </footer>
+  </body>
+</html>
