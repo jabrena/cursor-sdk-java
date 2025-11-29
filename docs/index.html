@@ -1,0 +1,2337 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Protocol Documentation</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic"/>
+    <style>
+      body {
+        width: 60em;
+        margin: 1em auto;
+        color: #222;
+        font-family: "Ubuntu", sans-serif;
+        padding-bottom: 4em;
+      }
+
+      h1 {
+        font-weight: normal;
+        border-bottom: 1px solid #aaa;
+        padding-bottom: 0.5ex;
+      }
+
+      h2 {
+        border-bottom: 1px solid #aaa;
+        padding-bottom: 0.5ex;
+        margin: 1.5em 0;
+      }
+
+      h3 {
+        font-weight: normal;
+        border-bottom: 1px solid #aaa;
+        padding-bottom: 0.5ex;
+      }
+
+      a {
+        text-decoration: none;
+        color: #567e25;
+      }
+
+      table {
+        width: 100%;
+        font-size: 80%;
+        border-collapse: collapse;
+      }
+
+      thead {
+        font-weight: 700;
+        background-color: #dcdcdc;
+      }
+
+      tbody tr:nth-child(even) {
+        background-color: #fbfbfb;
+      }
+
+      td {
+        border: 1px solid #ccc;
+        padding: 0.5ex 2ex;
+      }
+
+      td p {
+        text-indent: 1em;
+        margin: 0;
+      }
+
+      td p:nth-child(1) {
+        text-indent: 0;  
+      }
+
+       
+      .field-table td:nth-child(1) {  
+        width: 10em;
+      }
+      .field-table td:nth-child(2) {  
+        width: 10em;
+      }
+      .field-table td:nth-child(3) {  
+        width: 6em;
+      }
+      .field-table td:nth-child(4) {  
+        width: auto;
+      }
+
+       
+      .extension-table td:nth-child(1) {  
+        width: 10em;
+      }
+      .extension-table td:nth-child(2) {  
+        width: 10em;
+      }
+      .extension-table td:nth-child(3) {  
+        width: 10em;
+      }
+      .extension-table td:nth-child(4) {  
+        width: 5em;
+      }
+      .extension-table td:nth-child(5) {  
+        width: auto;
+      }
+
+       
+      .enum-table td:nth-child(1) {  
+        width: 10em;
+      }
+      .enum-table td:nth-child(2) {  
+        width: 10em;
+      }
+      .enum-table td:nth-child(3) {  
+        width: auto;
+      }
+
+       
+      .scalar-value-types-table tr {
+        height: 3em;
+      }
+
+       
+      #toc-container ul {
+        list-style-type: none;
+        padding-left: 1em;
+        line-height: 180%;
+        margin: 0;
+      }
+      #toc > li > a {
+        font-weight: bold;
+      }
+
+       
+      .file-heading {
+        width: 100%;
+        display: table;
+        border-bottom: 1px solid #aaa;
+        margin: 4em 0 1.5em 0;
+      }
+      .file-heading h2 {
+        border: none;
+        display: table-cell;
+      }
+      .file-heading a {
+        text-align: right;
+        display: table-cell;
+      }
+
+       
+      .badge {
+        width: 1.6em;
+        height: 1.6em;
+        display: inline-block;
+
+        line-height: 1.6em;
+        text-align: center;
+        font-weight: bold;
+        font-size: 60%;
+
+        color: #89ba48;
+        background-color: #dff0c8;
+
+        margin: 0.5ex 1em 0.5ex -1em;
+        border: 1px solid #fbfbfb;
+        border-radius: 1ex;
+      }
+    </style>
+
+    
+    <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+  </head>
+
+  <body>
+
+    <h1 id="title">Protocol Documentation</h1>
+
+    <h2>Table of Contents</h2>
+
+    <div id="toc-container">
+      <ul id="toc">
+        
+          
+          <li>
+            <a href="#agent.proto">agent.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#agent.v1.AgentClientMessage"><span class="badge">M</span>AgentClientMessage</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.AgentRunRequest"><span class="badge">M</span>AgentRunRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.AgentServerMessage"><span class="badge">M</span>AgentServerMessage</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.BackgroundShellSpawnArgs"><span class="badge">M</span>BackgroundShellSpawnArgs</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.BackgroundShellSpawnResult"><span class="badge">M</span>BackgroundShellSpawnResult</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.CancelAction"><span class="badge">M</span>CancelAction</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.ContextHeader"><span class="badge">M</span>ContextHeader</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.ConversationAction"><span class="badge">M</span>ConversationAction</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.ConversationStateStructure"><span class="badge">M</span>ConversationStateStructure</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.ConversationTokenDetails"><span class="badge">M</span>ConversationTokenDetails</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.DeleteArgs"><span class="badge">M</span>DeleteArgs</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.DeleteResult"><span class="badge">M</span>DeleteResult</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.DiagnosticsArgs"><span class="badge">M</span>DiagnosticsArgs</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.DiagnosticsResult"><span class="badge">M</span>DiagnosticsResult</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.ExecClientControlMessage"><span class="badge">M</span>ExecClientControlMessage</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.ExecClientMessage"><span class="badge">M</span>ExecClientMessage</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.ExecClientStreamClose"><span class="badge">M</span>ExecClientStreamClose</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.ExecClientThrow"><span class="badge">M</span>ExecClientThrow</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.ExecServerAbort"><span class="badge">M</span>ExecServerAbort</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.ExecServerControlMessage"><span class="badge">M</span>ExecServerControlMessage</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.ExecServerMessage"><span class="badge">M</span>ExecServerMessage</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.ExecutePlanAction"><span class="badge">M</span>ExecutePlanAction</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.FileEntry"><span class="badge">M</span>FileEntry</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.GetBlobArgs"><span class="badge">M</span>GetBlobArgs</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.GetBlobResult"><span class="badge">M</span>GetBlobResult</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.GitRepo"><span class="badge">M</span>GitRepo</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.GrepArgs"><span class="badge">M</span>GrepArgs</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.GrepResult"><span class="badge">M</span>GrepResult</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.HeartbeatUpdate"><span class="badge">M</span>HeartbeatUpdate</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.InteractionUpdate"><span class="badge">M</span>InteractionUpdate</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.KvClientMessage"><span class="badge">M</span>KvClientMessage</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.KvServerMessage"><span class="badge">M</span>KvServerMessage</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.LsArgs"><span class="badge">M</span>LsArgs</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.LsResult"><span class="badge">M</span>LsResult</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.McpArgs"><span class="badge">M</span>McpArgs</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.McpResult"><span class="badge">M</span>McpResult</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.McpTools"><span class="badge">M</span>McpTools</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.ModelDetails"><span class="badge">M</span>ModelDetails</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.PartialToolCallUpdate"><span class="badge">M</span>PartialToolCallUpdate</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.ProjectLayout"><span class="badge">M</span>ProjectLayout</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.ReadArgs"><span class="badge">M</span>ReadArgs</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.ReadResult"><span class="badge">M</span>ReadResult</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.RequestContext"><span class="badge">M</span>RequestContext</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.RequestContextArgs"><span class="badge">M</span>RequestContextArgs</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.RequestContextEnv"><span class="badge">M</span>RequestContextEnv</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.RequestContextResult"><span class="badge">M</span>RequestContextResult</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.RequestContextSuccess"><span class="badge">M</span>RequestContextSuccess</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.ResumeAction"><span class="badge">M</span>ResumeAction</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.SetBlobArgs"><span class="badge">M</span>SetBlobArgs</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.SetBlobResult"><span class="badge">M</span>SetBlobResult</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.ShellArgs"><span class="badge">M</span>ShellArgs</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.ShellCommandAction"><span class="badge">M</span>ShellCommandAction</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.ShellOutputDeltaUpdate"><span class="badge">M</span>ShellOutputDeltaUpdate</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.ShellResult"><span class="badge">M</span>ShellResult</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.ShellStream"><span class="badge">M</span>ShellStream</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.StartPlanAction"><span class="badge">M</span>StartPlanAction</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.StepStartedUpdate"><span class="badge">M</span>StepStartedUpdate</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.SummarizeAction"><span class="badge">M</span>SummarizeAction</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.SummaryCompletedUpdate"><span class="badge">M</span>SummaryCompletedUpdate</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.SummaryStartedUpdate"><span class="badge">M</span>SummaryStartedUpdate</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.SummaryUpdate"><span class="badge">M</span>SummaryUpdate</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.TextDeltaUpdate"><span class="badge">M</span>TextDeltaUpdate</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.ThinkingCompletedUpdate"><span class="badge">M</span>ThinkingCompletedUpdate</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.ThinkingDeltaUpdate"><span class="badge">M</span>ThinkingDeltaUpdate</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.TokenDeltaUpdate"><span class="badge">M</span>TokenDeltaUpdate</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.ToolCallCompletedUpdate"><span class="badge">M</span>ToolCallCompletedUpdate</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.ToolCallDeltaUpdate"><span class="badge">M</span>ToolCallDeltaUpdate</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.ToolCallStartedUpdate"><span class="badge">M</span>ToolCallStartedUpdate</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.TurnEndedUpdate"><span class="badge">M</span>TurnEndedUpdate</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.UserMessage"><span class="badge">M</span>UserMessage</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.UserMessageAction"><span class="badge">M</span>UserMessageAction</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.UserMessageAppendedUpdate"><span class="badge">M</span>UserMessageAppendedUpdate</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.WriteArgs"><span class="badge">M</span>WriteArgs</a>
+                </li>
+              
+                <li>
+                  <a href="#agent.v1.WriteResult"><span class="badge">M</span>WriteResult</a>
+                </li>
+              
+              
+              
+              
+                <li>
+                  <a href="#agent.v1.AgentService"><span class="badge">S</span>AgentService</a>
+                </li>
+              
+            </ul>
+          </li>
+        
+        <li><a href="#scalar-value-types">Scalar Value Types</a></li>
+      </ul>
+    </div>
+
+    
+      
+      <div class="file-heading">
+        <h2 id="agent.proto">agent.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+      
+        <h3 id="agent.v1.AgentClientMessage">AgentClientMessage</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>run_request</td>
+                  <td><a href="#agent.v1.AgentRunRequest">AgentRunRequest</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>exec_client_message</td>
+                  <td><a href="#agent.v1.ExecClientMessage">ExecClientMessage</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>kv_client_message</td>
+                  <td><a href="#agent.v1.KvClientMessage">KvClientMessage</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>conversation_action</td>
+                  <td><a href="#agent.v1.ConversationAction">ConversationAction</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>exec_client_control_message</td>
+                  <td><a href="#agent.v1.ExecClientControlMessage">ExecClientControlMessage</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="agent.v1.AgentRunRequest">AgentRunRequest</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>conversation_state</td>
+                  <td><a href="#agent.v1.ConversationStateStructure">ConversationStateStructure</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>action</td>
+                  <td><a href="#agent.v1.ConversationAction">ConversationAction</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>model_details</td>
+                  <td><a href="#agent.v1.ModelDetails">ModelDetails</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>mcp_tools</td>
+                  <td><a href="#agent.v1.McpTools">McpTools</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>conversation_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="agent.v1.AgentServerMessage">AgentServerMessage</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>interaction_update</td>
+                  <td><a href="#agent.v1.InteractionUpdate">InteractionUpdate</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>exec_server_message</td>
+                  <td><a href="#agent.v1.ExecServerMessage">ExecServerMessage</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>conversation_checkpoint_update</td>
+                  <td><a href="#agent.v1.ConversationStateStructure">ConversationStateStructure</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>kv_server_message</td>
+                  <td><a href="#agent.v1.KvServerMessage">KvServerMessage</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>exec_server_control_message</td>
+                  <td><a href="#agent.v1.ExecServerControlMessage">ExecServerControlMessage</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="agent.v1.BackgroundShellSpawnArgs">BackgroundShellSpawnArgs</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.BackgroundShellSpawnResult">BackgroundShellSpawnResult</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.CancelAction">CancelAction</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.ContextHeader">ContextHeader</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>field_2</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>field_3</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="agent.v1.ConversationAction">ConversationAction</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>user_message_action</td>
+                  <td><a href="#agent.v1.UserMessageAction">UserMessageAction</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>resume_action</td>
+                  <td><a href="#agent.v1.ResumeAction">ResumeAction</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>cancel_action</td>
+                  <td><a href="#agent.v1.CancelAction">CancelAction</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>summarize_action</td>
+                  <td><a href="#agent.v1.SummarizeAction">SummarizeAction</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>shell_command_action</td>
+                  <td><a href="#agent.v1.ShellCommandAction">ShellCommandAction</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>start_plan_action</td>
+                  <td><a href="#agent.v1.StartPlanAction">StartPlanAction</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>execute_plan_action</td>
+                  <td><a href="#agent.v1.ExecutePlanAction">ExecutePlanAction</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="agent.v1.ConversationStateStructure">ConversationStateStructure</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>root_prompt_messages_json</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>turns_old</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>todos</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>pending_tool_calls</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>token_details</td>
+                  <td><a href="#agent.v1.ConversationTokenDetails">ConversationTokenDetails</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>summary</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>plan</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>turns</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="agent.v1.ConversationTokenDetails">ConversationTokenDetails</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>used_tokens</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>max_tokens</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="agent.v1.DeleteArgs">DeleteArgs</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.DeleteResult">DeleteResult</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.DiagnosticsArgs">DiagnosticsArgs</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.DiagnosticsResult">DiagnosticsResult</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.ExecClientControlMessage">ExecClientControlMessage</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>stream_close</td>
+                  <td><a href="#agent.v1.ExecClientStreamClose">ExecClientStreamClose</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>throw</td>
+                  <td><a href="#agent.v1.ExecClientThrow">ExecClientThrow</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="agent.v1.ExecClientMessage">ExecClientMessage</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>shell_result</td>
+                  <td><a href="#agent.v1.ShellResult">ShellResult</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>write_result_bool</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>delete_result</td>
+                  <td><a href="#agent.v1.DeleteResult">DeleteResult</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>grep_result</td>
+                  <td><a href="#agent.v1.GrepResult">GrepResult</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>read_result</td>
+                  <td><a href="#agent.v1.ReadResult">ReadResult</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>ls_result</td>
+                  <td><a href="#agent.v1.LsResult">LsResult</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>diagnostics_result</td>
+                  <td><a href="#agent.v1.DiagnosticsResult">DiagnosticsResult</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>request_context_result</td>
+                  <td><a href="#agent.v1.RequestContextResult">RequestContextResult</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>mcp_result</td>
+                  <td><a href="#agent.v1.McpResult">McpResult</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>shell_stream</td>
+                  <td><a href="#agent.v1.ShellStream">ShellStream</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>exec_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>background_shell_spawn_result</td>
+                  <td><a href="#agent.v1.BackgroundShellSpawnResult">BackgroundShellSpawnResult</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>context_header</td>
+                  <td><a href="#agent.v1.ContextHeader">ContextHeader</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="agent.v1.ExecClientStreamClose">ExecClientStreamClose</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.ExecClientThrow">ExecClientThrow</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.ExecServerAbort">ExecServerAbort</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.ExecServerControlMessage">ExecServerControlMessage</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>abort</td>
+                  <td><a href="#agent.v1.ExecServerAbort">ExecServerAbort</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="agent.v1.ExecServerMessage">ExecServerMessage</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>shell_args_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>write_args_bool</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>delete_args</td>
+                  <td><a href="#agent.v1.DeleteArgs">DeleteArgs</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>grep_args</td>
+                  <td><a href="#agent.v1.GrepArgs">GrepArgs</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>read_args</td>
+                  <td><a href="#agent.v1.ReadArgs">ReadArgs</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>ls_args</td>
+                  <td><a href="#agent.v1.LsArgs">LsArgs</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>diagnostics_args</td>
+                  <td><a href="#agent.v1.DiagnosticsArgs">DiagnosticsArgs</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>request_context_args</td>
+                  <td><a href="#agent.v1.RequestContextArgs">RequestContextArgs</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>mcp_args</td>
+                  <td><a href="#agent.v1.McpArgs">McpArgs</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>shell_stream_args</td>
+                  <td><a href="#agent.v1.ShellArgs">ShellArgs</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>exec_id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>background_shell_spawn_args</td>
+                  <td><a href="#agent.v1.BackgroundShellSpawnArgs">BackgroundShellSpawnArgs</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>context_header</td>
+                  <td><a href="#agent.v1.ContextHeader">ContextHeader</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="agent.v1.ExecutePlanAction">ExecutePlanAction</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.FileEntry">FileEntry</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="agent.v1.GetBlobArgs">GetBlobArgs</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.GetBlobResult">GetBlobResult</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.GitRepo">GitRepo</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>path</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>status</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="agent.v1.GrepArgs">GrepArgs</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.GrepResult">GrepResult</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.HeartbeatUpdate">HeartbeatUpdate</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.InteractionUpdate">InteractionUpdate</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>text_delta</td>
+                  <td><a href="#agent.v1.TextDeltaUpdate">TextDeltaUpdate</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>tool_call_started</td>
+                  <td><a href="#agent.v1.ToolCallStartedUpdate">ToolCallStartedUpdate</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>tool_call_completed</td>
+                  <td><a href="#agent.v1.ToolCallCompletedUpdate">ToolCallCompletedUpdate</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>thinking_delta</td>
+                  <td><a href="#agent.v1.ThinkingDeltaUpdate">ThinkingDeltaUpdate</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>thinking_completed</td>
+                  <td><a href="#agent.v1.ThinkingCompletedUpdate">ThinkingCompletedUpdate</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>user_message_appended</td>
+                  <td><a href="#agent.v1.UserMessageAppendedUpdate">UserMessageAppendedUpdate</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>partial_tool_call</td>
+                  <td><a href="#agent.v1.PartialToolCallUpdate">PartialToolCallUpdate</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>token_delta</td>
+                  <td><a href="#agent.v1.TokenDeltaUpdate">TokenDeltaUpdate</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>summary</td>
+                  <td><a href="#agent.v1.SummaryUpdate">SummaryUpdate</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>summary_started</td>
+                  <td><a href="#agent.v1.SummaryStartedUpdate">SummaryStartedUpdate</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>summary_completed</td>
+                  <td><a href="#agent.v1.SummaryCompletedUpdate">SummaryCompletedUpdate</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>shell_output_delta</td>
+                  <td><a href="#agent.v1.ShellOutputDeltaUpdate">ShellOutputDeltaUpdate</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>heartbeat</td>
+                  <td><a href="#agent.v1.HeartbeatUpdate">HeartbeatUpdate</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>turn_ended</td>
+                  <td><a href="#agent.v1.TurnEndedUpdate">TurnEndedUpdate</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>tool_call_delta</td>
+                  <td><a href="#agent.v1.ToolCallDeltaUpdate">ToolCallDeltaUpdate</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>step_started</td>
+                  <td><a href="#agent.v1.StepStartedUpdate">StepStartedUpdate</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="agent.v1.KvClientMessage">KvClientMessage</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>get_blob_result</td>
+                  <td><a href="#agent.v1.GetBlobResult">GetBlobResult</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>set_blob_result</td>
+                  <td><a href="#agent.v1.SetBlobResult">SetBlobResult</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="agent.v1.KvServerMessage">KvServerMessage</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>id</td>
+                  <td><a href="#int64">int64</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>get_blob_args</td>
+                  <td><a href="#agent.v1.GetBlobArgs">GetBlobArgs</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>set_blob_args</td>
+                  <td><a href="#agent.v1.SetBlobArgs">SetBlobArgs</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="agent.v1.LsArgs">LsArgs</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.LsResult">LsResult</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.McpArgs">McpArgs</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.McpResult">McpResult</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.McpTools">McpTools</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.ModelDetails">ModelDetails</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>model_name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="agent.v1.PartialToolCallUpdate">PartialToolCallUpdate</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.ProjectLayout">ProjectLayout</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>abs_path</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>children_dirs</td>
+                  <td><a href="#agent.v1.ProjectLayout">ProjectLayout</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>children_files</td>
+                  <td><a href="#agent.v1.FileEntry">FileEntry</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>children_were_processed</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="agent.v1.ReadArgs">ReadArgs</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.ReadResult">ReadResult</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.RequestContext">RequestContext</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>workspace_path</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>env</td>
+                  <td><a href="#agent.v1.RequestContextEnv">RequestContextEnv</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>shared_notes_listing</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>git_repos</td>
+                  <td><a href="#agent.v1.GitRepo">GitRepo</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>project_layouts</td>
+                  <td><a href="#agent.v1.ProjectLayout">ProjectLayout</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="agent.v1.RequestContextArgs">RequestContextArgs</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.RequestContextEnv">RequestContextEnv</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>os_version</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>workspace_paths</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>shell</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>terminals_folder</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>agent_shared_notes_folder</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="agent.v1.RequestContextResult">RequestContextResult</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>success</td>
+                  <td><a href="#agent.v1.RequestContextSuccess">RequestContextSuccess</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="agent.v1.RequestContextSuccess">RequestContextSuccess</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>request_context</td>
+                  <td><a href="#agent.v1.RequestContext">RequestContext</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="agent.v1.ResumeAction">ResumeAction</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.SetBlobArgs">SetBlobArgs</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>blob_id</td>
+                  <td><a href="#bytes">bytes</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>blob_data</td>
+                  <td><a href="#bytes">bytes</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="agent.v1.SetBlobResult">SetBlobResult</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.ShellArgs">ShellArgs</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.ShellCommandAction">ShellCommandAction</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.ShellOutputDeltaUpdate">ShellOutputDeltaUpdate</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.ShellResult">ShellResult</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.ShellStream">ShellStream</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.StartPlanAction">StartPlanAction</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.StepStartedUpdate">StepStartedUpdate</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.SummarizeAction">SummarizeAction</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.SummaryCompletedUpdate">SummaryCompletedUpdate</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.SummaryStartedUpdate">SummaryStartedUpdate</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.SummaryUpdate">SummaryUpdate</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.TextDeltaUpdate">TextDeltaUpdate</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>text</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="agent.v1.ThinkingCompletedUpdate">ThinkingCompletedUpdate</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>thinking_duration_ms</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="agent.v1.ThinkingDeltaUpdate">ThinkingDeltaUpdate</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.TokenDeltaUpdate">TokenDeltaUpdate</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>tokens</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="agent.v1.ToolCallCompletedUpdate">ToolCallCompletedUpdate</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.ToolCallDeltaUpdate">ToolCallDeltaUpdate</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.ToolCallStartedUpdate">ToolCallStartedUpdate</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.TurnEndedUpdate">TurnEndedUpdate</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.UserMessage">UserMessage</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>text</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="agent.v1.UserMessageAction">UserMessageAction</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>user_message</td>
+                  <td><a href="#agent.v1.UserMessage">UserMessage</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="agent.v1.UserMessageAppendedUpdate">UserMessageAppendedUpdate</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>user_message</td>
+                  <td><a href="#agent.v1.UserMessage">UserMessage</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="agent.v1.WriteArgs">WriteArgs</h3>
+        <p></p>
+
+        
+
+        
+      
+        <h3 id="agent.v1.WriteResult">WriteResult</h3>
+        <p></p>
+
+        
+
+        
+      
+
+      
+
+      
+
+      
+        <h3 id="agent.v1.AgentService">AgentService</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>Run</td>
+                <td><a href="#agent.v1.AgentClientMessage">AgentClientMessage</a> stream</td>
+                <td><a href="#agent.v1.AgentServerMessage">AgentServerMessage</a> stream</td>
+                <td><p></p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+
+        
+    
+
+    <h2 id="scalar-value-types">Scalar Value Types</h2>
+    <table class="scalar-value-types-table">
+      <thead>
+        <tr><td>.proto Type</td><td>Notes</td><td>C++</td><td>Java</td><td>Python</td><td>Go</td><td>C#</td><td>PHP</td><td>Ruby</td></tr>
+      </thead>
+      <tbody>
+        
+          <tr id="double">
+            <td>double</td>
+            <td></td>
+            <td>double</td>
+            <td>double</td>
+            <td>float</td>
+            <td>float64</td>
+            <td>double</td>
+            <td>float</td>
+            <td>Float</td>
+          </tr>
+        
+          <tr id="float">
+            <td>float</td>
+            <td></td>
+            <td>float</td>
+            <td>float</td>
+            <td>float</td>
+            <td>float32</td>
+            <td>float</td>
+            <td>float</td>
+            <td>Float</td>
+          </tr>
+        
+          <tr id="int32">
+            <td>int32</td>
+            <td>Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint32 instead.</td>
+            <td>int32</td>
+            <td>int</td>
+            <td>int</td>
+            <td>int32</td>
+            <td>int</td>
+            <td>integer</td>
+            <td>Bignum or Fixnum (as required)</td>
+          </tr>
+        
+          <tr id="int64">
+            <td>int64</td>
+            <td>Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint64 instead.</td>
+            <td>int64</td>
+            <td>long</td>
+            <td>int/long</td>
+            <td>int64</td>
+            <td>long</td>
+            <td>integer/string</td>
+            <td>Bignum</td>
+          </tr>
+        
+          <tr id="uint32">
+            <td>uint32</td>
+            <td>Uses variable-length encoding.</td>
+            <td>uint32</td>
+            <td>int</td>
+            <td>int/long</td>
+            <td>uint32</td>
+            <td>uint</td>
+            <td>integer</td>
+            <td>Bignum or Fixnum (as required)</td>
+          </tr>
+        
+          <tr id="uint64">
+            <td>uint64</td>
+            <td>Uses variable-length encoding.</td>
+            <td>uint64</td>
+            <td>long</td>
+            <td>int/long</td>
+            <td>uint64</td>
+            <td>ulong</td>
+            <td>integer/string</td>
+            <td>Bignum or Fixnum (as required)</td>
+          </tr>
+        
+          <tr id="sint32">
+            <td>sint32</td>
+            <td>Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int32s.</td>
+            <td>int32</td>
+            <td>int</td>
+            <td>int</td>
+            <td>int32</td>
+            <td>int</td>
+            <td>integer</td>
+            <td>Bignum or Fixnum (as required)</td>
+          </tr>
+        
+          <tr id="sint64">
+            <td>sint64</td>
+            <td>Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int64s.</td>
+            <td>int64</td>
+            <td>long</td>
+            <td>int/long</td>
+            <td>int64</td>
+            <td>long</td>
+            <td>integer/string</td>
+            <td>Bignum</td>
+          </tr>
+        
+          <tr id="fixed32">
+            <td>fixed32</td>
+            <td>Always four bytes. More efficient than uint32 if values are often greater than 2^28.</td>
+            <td>uint32</td>
+            <td>int</td>
+            <td>int</td>
+            <td>uint32</td>
+            <td>uint</td>
+            <td>integer</td>
+            <td>Bignum or Fixnum (as required)</td>
+          </tr>
+        
+          <tr id="fixed64">
+            <td>fixed64</td>
+            <td>Always eight bytes. More efficient than uint64 if values are often greater than 2^56.</td>
+            <td>uint64</td>
+            <td>long</td>
+            <td>int/long</td>
+            <td>uint64</td>
+            <td>ulong</td>
+            <td>integer/string</td>
+            <td>Bignum</td>
+          </tr>
+        
+          <tr id="sfixed32">
+            <td>sfixed32</td>
+            <td>Always four bytes.</td>
+            <td>int32</td>
+            <td>int</td>
+            <td>int</td>
+            <td>int32</td>
+            <td>int</td>
+            <td>integer</td>
+            <td>Bignum or Fixnum (as required)</td>
+          </tr>
+        
+          <tr id="sfixed64">
+            <td>sfixed64</td>
+            <td>Always eight bytes.</td>
+            <td>int64</td>
+            <td>long</td>
+            <td>int/long</td>
+            <td>int64</td>
+            <td>long</td>
+            <td>integer/string</td>
+            <td>Bignum</td>
+          </tr>
+        
+          <tr id="bool">
+            <td>bool</td>
+            <td></td>
+            <td>bool</td>
+            <td>boolean</td>
+            <td>boolean</td>
+            <td>bool</td>
+            <td>bool</td>
+            <td>boolean</td>
+            <td>TrueClass/FalseClass</td>
+          </tr>
+        
+          <tr id="string">
+            <td>string</td>
+            <td>A string must always contain UTF-8 encoded or 7-bit ASCII text.</td>
+            <td>string</td>
+            <td>String</td>
+            <td>str/unicode</td>
+            <td>string</td>
+            <td>string</td>
+            <td>string</td>
+            <td>String (UTF-8)</td>
+          </tr>
+        
+          <tr id="bytes">
+            <td>bytes</td>
+            <td>May contain any arbitrary sequence of bytes.</td>
+            <td>string</td>
+            <td>ByteString</td>
+            <td>str</td>
+            <td>[]byte</td>
+            <td>ByteString</td>
+            <td>string</td>
+            <td>String (ASCII-8BIT)</td>
+          </tr>
+        
+      </tbody>
+    </table>
+  </body>
+</html>
+
